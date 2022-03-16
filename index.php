@@ -12,7 +12,7 @@ if (isset($_SESSION['login_successful']) && $_SESSION['login_successful'] == tru
             window.location.href='logged_in/home.php'; 
         </script>
         ";
-}
+} 
 ?>
 
 <!DOCTYPE html>
