@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1430px;
+  background-color: grey;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 64px;
+  margin-left: 400px;
+}
+
+header div.user_logout {
+  width: 151px;
+  height: 66px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  width: 151px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+header div.user_logout a {
+  color: black;
+}
+
+header div.donate button {
+  background-color: gold;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  width: 151px;
+  height: 66px;
+  margin-left: 370px;
+}
+
+div.popup-container {
+  position: fixed;
+  width: 1100px;
+  height: 550px;
+  background-color: rgba(119, 205, 255, 0.2);
+  display: flex;
+  margin-left: 163px;
+  margin-top: 700px;
+  display: none;
+}
+
+div.popup-container div.popup {
+  background-color: rgb(49, 49, 49);
+  width: 1100px;
+  height: 550px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+div.popup-container div.popup div {
+  display: flex;
+}
+
+div.popup-container div.popup div button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  margin-left: 20px;
+  width: 50px;
+  height: 40px;
+  font-size: 50px;
+}
+
+div.popup-container div.popup div div {
+  color: gold;
+  font-weight: bold;
+  font-size: 94px;
+  margin-left: 190px;
+}
+
+div.popup-container div.popup div div div {
+  color: gold;
+  font-weight: bold;
+  font-size: 104px;
+  margin-top: 50px;
+  margin-left: -160px;
+  padding: 20px 40px;
+  width: 900px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
