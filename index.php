@@ -15,8 +15,6 @@ if (isset($_SESSION['login_successful']) && $_SESSION['login_successful'] == tru
 } 
 ?>
 
-<!DOCTYPE html> 
-<html lang="en">
 <!DOCTYPE html>
 <html lang="en"> 
 
