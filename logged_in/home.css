@@ -65,7 +65,7 @@ header div.donate button {
   margin-left: 370px;
 }
 
-div.popup_container {
+header div.popup_container {
   position: fixed;
   width: 1100px;
   height: 550px;
@@ -76,7 +76,7 @@ div.popup_container {
   display: none;
 }
 
-div.popup_container div.donation {
+header div.popup_container div.donation {
   background-color: rgb(49, 49, 49);
   width: 1100px;
   height: 550px;
@@ -86,11 +86,11 @@ div.popup_container div.donation {
   flex-direction: row;
 }
 
-div.popup_container div.donation div {
+header iv.popup_container div.donation div {
   display: flex;
 }
 
-div.popup_container div.donation div button {
+header div.popup_container div.donation div button {
   border: none;
   background-color: transparent;
   color: white;
@@ -100,18 +100,17 @@ div.popup_container div.donation div button {
   font-size: 50px;
 }
 
-div.popup_container div.donation div div {
+header div.popup_container div.donation div div {
   color: gold;
   font-weight: bold;
   font-size: 94px;
-  margin-left: 190px;
+  margin-left: 250px;
 }
 
-div.popup_container div.donation div div div {
+header div.popup_container div.donation div div div {
   color: gold;
   font-weight: bold;
   font-size: 104px;
-  margin-top: 50px;
   margin-left: -160px;
   padding: 20px 40px;
   width: 900px;
@@ -119,4 +118,124 @@ div.popup_container div.donation div div div {
   display: flex;
   align-items: center;
   text-align: center;
+}
+
+/*
+  Add The CSS For Other Things Here (Since we want div.change
+  to be at the bottom of the page 
+*/
+
+div.change {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+div.change div.change_email button,
+div.change div.change_password button {
+  background-color: gold;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 4px 12px;
+  border: 8px solid #000;
+  border-radius: 45px;
+  outline: none;
+  margin-top: 10px;
+  width: 250px;
+  height: 100px;
+}
+
+div.popup_container {
+  position: fixed;
+  width: 700px;
+  height: 400px;
+  background-color: transparent;
+  align-items: center;
+  display: flex;
+  margin-top: 230px;
+  margin-right: 0;
+  display: none;
+  border-radius: 10px;
+}
+
+div.popup_container div.email_popup,
+div.popup_container div.password_popup {
+  background-color: lightblue;
+  width: 700px;
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  margin-top: 260px;
+}
+
+div.popup_container div.email_popup h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+div.popup_container div.password_popup h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+div.popup_container div.email_popup h2 span,
+div.popup_container div.password_popup h2 span {
+  margin-left: 145px;
+  color: white;
+  font-size: 45px;
+}
+
+div.popup_container div.email_popup h2 button {
+  border: none;
+  background-color: transparent;
+  margin-left: 90px;
+  width: 50px;
+  height: 40px;
+  font-size: 30px;
+}
+
+div.popup_container div.password_popup h2 button {
+  border: none;
+  background-color: transparent;
+  margin-left: 60px;
+  margin-right: 40px;
+  width: 50px;
+  height: 40px;
+  font-size: 30px;
+}
+
+div.popup_container div.email_popup input,
+div.popup_container div.password_popup input {
+  width: 400px;
+  height: 70px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid blue;
+  border-radius: 0;
+  padding: 5px 0;
+  font-weight: 550;
+  font-size: 25px;
+  outline: none;
+}
+
+div.popup_container div.email_popup button.email-btn,
+div.popup_container div.password_popup button.password-btn {
+  width: 140px;
+  height: 60px;
+  font-size: 25px;
+  font-weight: 550;
+  font-style: 15px;
+  background-color: gold;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 45px;
+  outline: none;
+  margin-top: 10px;
 }
