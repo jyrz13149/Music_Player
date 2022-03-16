@@ -29,7 +29,7 @@ session_start();
             </button>
         </div>
 
-        <div class="popup-container" id="donate-popup">
+        <div class="popup_container" id="donate-popup">
             <div class="donation popup">
                 <div>
                     <button type="reset" onclick="popup('donate-popup')">

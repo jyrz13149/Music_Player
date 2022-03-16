@@ -65,7 +65,7 @@ header div.donate button {
   margin-left: 370px;
 }
 
-div.popup-container {
+div.popup_container {
   position: fixed;
   width: 1100px;
   height: 550px;
@@ -76,7 +76,7 @@ div.popup-container {
   display: none;
 }
 
-div.popup-container div.popup {
+div.popup_container div.donation {
   background-color: rgb(49, 49, 49);
   width: 1100px;
   height: 550px;
@@ -86,11 +86,11 @@ div.popup-container div.popup {
   flex-direction: row;
 }
 
-div.popup-container div.popup div {
+div.popup_container div.donation div {
   display: flex;
 }
 
-div.popup-container div.popup div button {
+div.popup_container div.donation div button {
   border: none;
   background-color: transparent;
   color: white;
@@ -100,14 +100,14 @@ div.popup-container div.popup div button {
   font-size: 50px;
 }
 
-div.popup-container div.popup div div {
+div.popup_container div.donation div div {
   color: gold;
   font-weight: bold;
   font-size: 94px;
   margin-left: 190px;
 }
 
-div.popup-container div.popup div div div {
+div.popup_container div.donation div div div {
   color: gold;
   font-weight: bold;
   font-size: 104px;
