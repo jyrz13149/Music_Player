@@ -45,7 +45,7 @@ if (isset($_SESSION['login_successful']) && $_SESSION['login_successful'] == tru
 
     <div class="popup-container" id="login-popup">
         <div class="login_popup">
-            <form style="text-align: center" method="POST" action="index_actions/login_create_account.php">
+            <form style="text-align: center" method="POST" action="account_changes/login_create_account.php">
                 <h2>
                     <span>USER LOGIN</span>
                     <button type="reset" onclick="popup('login-popup')">X</button>
@@ -65,7 +65,7 @@ if (isset($_SESSION['login_successful']) && $_SESSION['login_successful'] == tru
 
     <div class="popup-container" id="forgot-popup">
         <div class="forgot popup">
-            <form style="text-align: center" method="POST" action="index_actions/forgot_password_reset.php">
+            <form style="text-align: center" method="POST" action="account_changes/forgot_password_reset.php">
                 <h2>
                     <span>PASSWORD RESET</span>
                     <button type="reset" onclick="popup('forgot-popup')">X</button>
@@ -82,7 +82,7 @@ if (isset($_SESSION['login_successful']) && $_SESSION['login_successful'] == tru
 
     <div class="popup-container" id="create-account-popup">
         <div class="register popup">
-            <form style="text-align: center" method="POST" action="index_actions/login_create_account.php">
+            <form style="text-align: center" method="POST" action="account_changes/login_create_account.php">
                 <h2>
                     <span>CREATE GOATIFY ACCOUNT</span>
                     <button type="reset" onclick="popup('create-account-popup')">

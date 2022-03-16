@@ -33,7 +33,7 @@ function sendResetEmail($reset_token, $email)
         $mail->Subject = 'PASSWORD RESET: GOATIFY';
         $mail->Body    = "THANK YOU FOR USING GOTIFY AS YOUR MUSIC PLAYER~
                             Please reset your password through the link below. 
-                            <a href = 'http://localhost/Music_Player/index_actions/reset_password.php?email=$email&pass_reset_token=$reset_token'>
+                            <a href = 'http://localhost/Music_Player/account_changes/reset_password.php?email=$email&pass_reset_token=$reset_token'>
                                 RESET PASSWORD
                             </a>";
 

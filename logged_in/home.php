@@ -83,7 +83,7 @@ session_start();
 
     <div class="popup_container" id="email-popup">
         <div class="email_popup">
-            <form style="text-align: center" method="POST" action="../index_actions/change_account_info.php">
+            <form style="text-align: center" method="POST" action="../account_changes/change_account_info.php">
                 <h2>
                     <span>CHANGE EMAIL</span>
                     <button type="reset" onclick="popup('email-popup')">X</button>
@@ -98,7 +98,7 @@ session_start();
 
     <div class="popup_container" id="password-popup">
         <div class="password_popup">
-            <form style="text-align: center" method="POST" action="../index_actions/change_account_info.php">
+            <form style="text-align: center" method="POST" action="../account_changes/change_account_info.php">
                 <h2>
                     <span>CHANGE PASSWORD</span>
                     <button type="reset" onclick="popup('password-popup')">X</button>
