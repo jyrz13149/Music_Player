@@ -11,10 +11,11 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
   background-color: black;
   color: white;
   padding: 20px 0;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 header {
@@ -120,16 +121,163 @@ header div.popup_container div.donation div div div {
   text-align: center;
 }
 
-/*
-  Add The CSS For Other Things Here (Since we want div.change
-  to be at the bottom of the page 
-*/
+div.search_bar form {
+  display: flex;
+  text-align: center;
+  background-color: transparent;
+  margin-top: 10px;
+  margin-left: 90px;
+}
 
-div.change {
+div.search_bar input {
+  width: 600px;
+  height: 70px;
+  background-color: lightgray;
+  border: none;
+  border-radius: 45px;
+  font-weight: 550;
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+div.search_bar button {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border: none;
+  border-radius: 45px;
+}
+
+div.head_title {
+  background-color: transparent;
+  width: 700px;
+  height: 45px;
+}
+
+div.head_title h3,
+div.second_title h3,
+div.third_title h3 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+div.playlists {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-top: -20px;
+}
+
+div.playlists div.lists {
+  width: 850px;
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+  margin-left: 250px;
+}
+
+div.playlists div.lists table {
+  background-color: transparent;
+  width: 800px;
+  border: none;
+  margin-left: 290px;
+}
+
+div.playlists div.lists table tr.names {
+  background-color: lightgray;
+  color: black;
+  height: 60px;
+  text-align: center;
+}
+
+div.playlists div.lists table tr.names td {
+  border-radius: 15px;
+  border-color: black;
+  border-width: 5px;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+div.playlists div.playlist_actions {
+  margin-left: 25px;
+  margin-bottom: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-around;
+}
+
+div.playlists div.playlist_actions div.create_playlist,
+div.playlists div.playlist_actions div.delete_playlist {
+  background-color: lightgray;
+  width: 200px;
+  height: 40px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+div.playlists div.playlist_actions div.create_playlist a,
+div.playlists div.playlist_actions div.delete_playlist a {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+div.second_title {
+  background-color: transparent;
+  width: 700px;
+  height: 45px;
+  margin-top: -30px;
+}
+
+div.last_playlist,
+div.last_song {
+  width: 800px;
+  height: 62px;
+  margin-left: 50px;
+}
+
+div.last_playlist table,
+div.last_song table {
+  background-color: transparent;
+  width: 800px;
+  border: none;
+}
+div.last_playlist table tr.name,
+div.last_song table tr.song_name {
+  background-color: lightgray;
+  color: black;
+  height: 60px;
+  text-align: center;
+}
+
+div.last_playlist table tr.name td,
+div.last_song table tr.song_name td {
+  border-radius: 15px;
+  border-color: black;
+  border-width: 5px;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+div.third_title {
+  background-color: transparent;
+  width: 700px;
+  height: 45px;
+  margin-top: 5px;
+}
+
+div.change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 1150px;
+  margin-top: -215px;
 }
 
 div.change div.change_email button,
@@ -153,8 +301,7 @@ div.popup_container {
   background-color: transparent;
   align-items: center;
   display: flex;
-  margin-top: 230px;
-  margin-right: 0;
+  margin-top: -375px;
   display: none;
   border-radius: 10px;
 }

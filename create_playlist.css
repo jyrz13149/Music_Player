@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1430px;
+  background-color: transparent;
+  color: white;
+  padding: 20px 0;
+}
+
+header div.user_logout {
+  width: 151px;
+  height: 66px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  width: 151px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+header div.user_logout a {
+  color: black;
+}
+
+header div.home {
+  width: 151px;
+  height: 66px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  width: 151px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
+  position: fixed;
+  right: 0;
+}
+
+header div.home a {
+  color: black;
+}
+
+div.create_playlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 100px;
+}
+
+div.create_playlist form h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+div.create_playlist form h2 span {
+  color: white;
+  font-size: 65px;
+}
+
+div.create_playlist form input {
+  width: 400px;
+  height: 70px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 3px solid blue;
+  border-radius: 0;
+  padding: 5px 0;
+  font-weight: 550;
+  font-size: 35px;
+  outline: none;
+}
+
+div.create_playlist form button {
+  width: 160px;
+  height: 70px;
+  font-size: 25px;
+  font-weight: 550;
+  font-style: 15px;
+  background-color: gold;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 45px;
+  outline: none;
+  margin-top: 35px;
+}

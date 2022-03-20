@@ -1,7 +1,28 @@
 <?php
 
+use LDAP\Result;
+
 require('../db_connection.php');
 session_start();
+
+$query = "SELECT * FROM `user_information` WHERE `email`= '$_SESSION[email]'";
+$result = mysqli_query($con, $query);
+
+if ($result) {
+
+    $result_fetch = mysqli_fetch_assoc($result);
+
+    if ($result_fetch['playlist_status'] == 1) {
+    } else {
+        echo "
+            <script>
+                alert('You have not created a playlist yet. Please create a playlist to continue to the home page'); 
+                window.location.href='../create_playlist.php'; 
+            </script>
+            ";
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -59,11 +80,106 @@ session_start();
     </header>
 
     <!-- Search Bar -->
-    <!-- New Playlist -->
-    <!-- Delete Playlist -->
-    <!-- List of Playlists -->
+
+    <div class="search_bar">
+        <form method="POST" action="../search.php">
+            <input type="text" placeholder="Search" name="search_input" />
+            <button type="submit" class="search-btn" name="search"> <img src="../images/magnifying-glass.png" height="50" width="50" /></button>
+        </form>
+    </div>
+
+    <!-- List of Playlists, New Playlist, Delete Playlist  -->
+    <div class="head_title">
+        <h3>
+            List of Playlist
+        </h3>
+    </div>
+
+    <div class="playlists">
+        <div class="lists">
+            <table border="1px">
+                <?php
+
+                $query = "SELECT * FROM `$_SESSION[email]`";
+                $result = mysqli_query($con, $query);
+
+                while ($name = mysqli_fetch_assoc($result)) {
+                ?>
+                    <tr class="names">
+                        <td>
+                            <?php
+                            echo $name['playlist_name'];
+                            ?>
+                        </td>
+                    </tr>
+                <?php
+                }
+                ?>
+            </table>
+        </div>
+        <div class="playlist_actions">
+            <div class="create_playlist">
+                <a href='../create_playlist.php'>CREATE PLAYLIST</a>
+            </div>
+            <div class=" delete_playlist">
+                <a href='../delete_playlist.php'>DELETE PLAYLIST</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Last Playlist -->
+
+    <div class="second_title">
+        <h3>
+            Last Played Playlist
+        </h3>
+    </div>
+    <div class="last_playlist">
+        <table border="1px">
+            <?php
+
+            $query = "SELECT * FROM `$_SESSION[email]`";
+            $result = mysqli_query($con, $query);
+            $name = mysqli_fetch_assoc($result);
+            ?>
+            <tr class="name">
+                <td>
+                    <?php
+                    echo $name['playlist_name'];
+                    ?>
+                </td>
+            </tr>
+            <?php
+            ?>
+        </table>
+    </div>
+
     <!-- Last Song -->
+
+    <div class="third_title">
+        <h3>
+            Last Played Song
+        </h3>
+    </div>
+    <div class="last_song">
+        <table border="1px">
+            <?php
+
+            $query = "SELECT * FROM `$_SESSION[email]`";
+            $result = mysqli_query($con, $query);
+            $name = mysqli_fetch_assoc($result);
+            ?>
+            <tr class="song_name">
+                <td>
+                    <?php
+                    echo $name['playlist_name'];
+                    ?>
+                </td>
+            </tr>
+            <?php
+            ?>
+        </table>
+    </div>
 
     <div class="change">
         <!-- Change Email -->
