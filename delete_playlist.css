@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 1430px;
+  background-color: grey;
+  color: white;
+  padding: 20px 0;
+}
+
+header h1 {
+  font-size: 64px;
+  margin-left: 400px;
+}
+
+header div.user_logout {
+  width: 151px;
+  height: 66px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  width: 151px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+header div.user_logout a,
+header div.user_home a {
+  color: black;
+}
+
+header div.user_home {
+  width: 151px;
+  height: 66px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: gold;
+  border: none;
+  border-radius: 10px;
+  width: 151px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 372px;
+}
+
+div.delete_question {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+div.delete_question h2 {
+  font-size: 44px;
+}
+
+div.head_title {
+  background-color: transparent;
+  width: 700px;
+  height: 45px;
+}
+
+div.head_title h3 {
+  font-size: 36px;
+  font-weight: lighter;
+}
+
+div.playlists {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 250px;
+}
+
+div.playlists div.lists {
+  width: 850px;
+  height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+  margin-left: 250px;
+}
+
+div.playlists div.lists table {
+  background-color: transparent;
+  width: 800px;
+  border: none;
+  margin-left: 290px;
+}
+
+div.playlists div.lists table tr.names {
+  background-color: lightgray;
+  color: black;
+  height: 60px;
+  text-align: center;
+}
+
+div.playlists div.lists table tr.names td {
+  border-radius: 15px;
+  border-color: black;
+  border-width: 5px;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+div.delete_playlist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+div.delete_playlist form input {
+  width: 400px;
+  height: 70px;
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-bottom: 3px solid blue;
+  border-radius: 0;
+  padding: 5px 0;
+  font-weight: 550;
+  font-size: 35px;
+  outline: none;
+}
+
+div.delete_playlist form button {
+  width: 160px;
+  height: 70px;
+  font-size: 25px;
+  font-weight: 550;
+  font-style: 15px;
+  background-color: gold;
+  padding: 5px 12px;
+  border: none;
+  border-radius: 45px;
+  outline: none;
+  margin-top: 15px;
+}

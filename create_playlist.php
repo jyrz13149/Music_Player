@@ -63,7 +63,7 @@ session_start();
                 $update_status = "UPDATE `user_information` SET `playlist_status`='1' WHERE `email`='$_SESSION[email]'";
                 if (mysqli_query($con, $create_table) && mysqli_query($con, $update_status)) {
 
-                    $query = "SELECT * FROM `alfy001118@gmail.com` WHERE `playlist_name`='$_POST[playlist_name]'";
+                    $query = "SELECT * FROM `$_SESSION[email]` WHERE `playlist_name`='$_POST[playlist_name]'";
                     $result = mysqli_query($con, $query);
                     if ($result) {
 

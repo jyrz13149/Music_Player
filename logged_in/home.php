@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 require('../db_connection.php');
 session_start();
 
