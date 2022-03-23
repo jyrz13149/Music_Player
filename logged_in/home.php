@@ -41,6 +41,13 @@ if ($result) {
         <div class='user_logout'>
             <a href='../logout.php'>LOGOUT</a>
         </div>
+
+        <div class='user_logout'>
+            <a href='../song_pages/song_page.php'>TEMPORARY SONG PAGE BUTTON</a>
+        </div>
+        <div class='user_logout'>
+            <a href='../playlist_pages/playlist_page.php'>TEMPORARY PLAYLIST PAGE BUTTON</a>
+        </div>
         <h1>GOATIFY</h1>
         <div class='donate'>
             <button type='button' onclick="popup('donate-popup')">
