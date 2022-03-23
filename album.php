@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en" style="background-color:black;">
+<html lang="en"  style="background-color:black;">
 <style>
     .grid-container {
         align-items: center;
@@ -86,6 +86,51 @@
     .toolbar #home-button:hover {
         opacity: 0.8;
     }
+    /* Dropdown Button */
+    
+    .dropbtn {
+        background-color: black;
+        border: none;
+    }
+    /* The container <div> - needed to position the dropdown content */
+    
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    /* Dropdown Content (Hidden by Default) */
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    /* Links inside the dropdown */
+    
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+    /* Change color of dropdown links on hover */
+    
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+    /* Show the dropdown menu on hover */
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    
+    .dropdown:hover .dropbtn {
+        background-color: black;
+    }
 </style>
 <!-- Toolbar -->
 <div class="toolbar">
@@ -109,15 +154,32 @@
             <h4 class="song-name">Song Name</h4>
         </div>
         <div class="spacer"></div>
-        <input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" />
+        <div class="dropdown">
+            <button class="dropbtn"><input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" /> 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Information</a>
+                <a href="#">Add to playlist</a>
+            </div>
+        </div>
     </div>
     <div class="song-cell">
         <div>
             <h4 class="song-name">Song Name</h4>
         </div>
         <div class="spacer"></div>
-        <input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" />
+        <div class="dropdown">
+            <button class="dropbtn"><input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" /> 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Information</a>
+                <a href="#">Add to playlist</a>
+            </div>
+        </div>
     </div>
+
 </div>
 
 <script>
@@ -125,5 +187,3 @@
 </script>
 
 </html>
-
-!
