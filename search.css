@@ -1,0 +1,161 @@
+/* section for the whole page*/
+#wholePage {
+    background-color: black;
+    color: white;
+}
+
+/* for positioning make sure to use the absolute and the left and right for the home
+and logout buttons*/
+#logOutButton {
+    position: absolute;
+    left: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+#homeButton {
+    position: absolute;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+/*This describes the header title*/
+#header {
+    padding-top: 15px;
+    font-size: 60px;
+  }
+  /*This describes the text for title*/
+.brand {
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+/* search and results*/
+
+#search
+{
+  display: flex;
+  justify-content: space-evenly;
+  background: antiquewhite;
+  width: 30cm;
+  height: 50px;
+  padding-top: 130px;    
+}
+
+/* both of theses css sections regulate the tables width */
+#sections
+{
+  color: white;
+}
+
+#titles
+{
+  padding-top: 50px;
+  bottom: 0px;
+  background-color: orange;
+  color: white;
+  width: 45cm;
+  font-size: 30px;
+}
+
+/* these 2 sections gives the spaceing for each of the columns in the table */
+#name
+{
+  width: 600px;
+}
+#artist
+{
+  width: 300px;
+}
+
+/*This describes all the input boxes*/
+.inputSect {
+    font-size: 25px;
+    width: 15cm;
+    height: 35px;
+    border-radius: 100px;
+    /*Let the input text start some px's ahead*/
+    padding-left: 10px;
+    background-color: #c4c4c4;
+}
+
+#searchButton {
+    height: 50px;
+    width: 50px;
+    padding-left: 50px;
+}
+
+/* describes entire container holding the search results */
+#results
+{
+    top: 180px;
+    background: aquamarine;
+    width: 35cm;
+    height: 100%;
+}
+
+/* for positioning make sure to use the absolute and the left and right for the home
+ and logout buttons*/
+ #logOutButton {
+    position: absolute;
+    left: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+#homeButton {
+    position: absolute;
+    right: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+/*Drop down section-------------------------------------------*/
+
+/* Style The Dropdown Button */
+.dropbtn {
+    background-color: antiquewhite;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    /* float: left; */
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: gold;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: gold;
+}
