@@ -1,10 +1,4 @@
-<?php
-  require ('db_connection.php');
-  session_start();
-?>
-
-<!DOCTYPE html>
-<html lang="en"  style="background-color:black;">
+<html style="background-color:black;">
 <style>
     .grid-container {
         align-items: center;
@@ -73,12 +67,13 @@
         right: 0;
         height: 40px;
         display: flex;
+        min-width: 200px;
         text-align: center;
         align-items: center;
         background-color: black;
         color: white;
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 115px;
+        margin-right: 115px;
         font-size: 25px;
     }
     
