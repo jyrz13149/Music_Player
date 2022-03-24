@@ -83,6 +83,23 @@ session_start();
             # Playlist Name Exists. Delete the Playlist Name 
             if (mysqli_num_rows($result) > 0) {
 
+                # Check the song_email table for any songs that will be in the deleted playlist
+                # Delete the songs in the song_email table with playlist_id = delete playlist id 
+                $fetch_playlist = mysqli_fetch_assoc($result);
+
+                $song_query = "SELECT * FROM `song_$_SESSION[email]`";
+                $song_result = mysqli_query($con, $song_query);
+
+                $num_rows = mysqli_num_rows($song_result);
+
+                if ($song_result) {
+
+                    for ($i = 0; $i < $num_rows; $i++) {
+
+                        mysqli_query($con, "DELETE FROM `song_$_SESSION[email]` WHERE `playlist_id`='$fetch_playlist[id]'");
+                    }
+                }
+
                 $query = "DELETE FROM `$_SESSION[email]` WHERE `playlist_name`='$_POST[playlist_name]'";
                 if (mysqli_query($con, $query)) {
 
@@ -93,15 +110,16 @@ session_start();
                     # If table is empty  
                     if (mysqli_num_rows($result) == 0) {
 
-                        $query = "SELECT * FROM `user_information` WHERE `email`= '$_SESSION[email]'";
+                        $query = "SELECT * FROM `user_information` WHERE `email`='$_SESSION[email]'";
                         $result = mysqli_query($con, $query);
 
                         if ($result) {
 
                             $delete_table = "DROP TABLE `Music_Player_DB`.`$_SESSION[email]`";
+                            $delete_song_table = "DROP TABLE `Music_Player_DB`.`song_$_SESSION[email]`";
                             $update_status = "UPDATE `user_information` SET `playlist_status`='0' WHERE `email`='$_SESSION[email]'";
 
-                            if (mysqli_query($con, $delete_table) && mysqli_query($con, $update_status)) {
+                            if (mysqli_query($con, $delete_table) && mysqli_query($con, $update_status) && mysqli_query($con, $delete_song_table)) {
 
                                 echo "
                                     <script>
