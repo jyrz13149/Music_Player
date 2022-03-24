@@ -60,7 +60,7 @@ session_start();
 
                 # create table (table name = email)
                 $create_table = "CREATE TABLE `Music_Player_DB`.`$_SESSION[email]` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `playlist_name` VARCHAR(128) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
-                $create_song_table = "CREATE TABLE `Music_Player_DB`.`song_$_SESSION[email]` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `song_name` VARCHAR(128) NOT NULL , `playlist_id` INT(11) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+                $create_song_table = "CREATE TABLE `Music_Player_DB`.`song_$_SESSION[email]` ( `id` INT(11) NOT NULL AUTO_INCREMENT , `playlist_id` INT(11) NOT NULL , `song_name` VARCHAR(128) NOT NULL , `artist_name` VARCHAR(128) NOT NULL , `album_name` VARCHAR(128) NOT NULL , `genre` VARCHAR(128) NOT NULL , `release_year` VARCHAR(128) NOT NULL , `link` VARCHAR(128) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
                 $update_status = "UPDATE `user_information` SET `playlist_status`='1' WHERE `email`='$_SESSION[email]'";
                 if (mysqli_query($con, $create_table) && mysqli_query($con, $update_status) && mysqli_query($con, $create_song_table)) {
 

@@ -41,13 +41,6 @@ if ($result) {
         <div class='user_logout'>
             <a href='../logout.php'>LOGOUT</a>
         </div>
-
-        <div class='user_logout'>
-            <a href='../song_pages/song_page.php'>TEMPORARY SONG PAGE BUTTON</a>
-        </div>
-        <div class='user_logout'>
-            <a href='../playlist_pages/playlist_page.php'>TEMPORARY PLAYLIST PAGE BUTTON</a>
-        </div>
         <h1>GOATIFY</h1>
         <div class='donate'>
             <button type='button' onclick="popup('donate-popup')">
@@ -112,9 +105,11 @@ if ($result) {
                 ?>
                     <tr class="names">
                         <td>
-                            <?php
-                            echo $name['playlist_name'];
-                            ?>
+                            <button>
+                                <?php
+                                echo $name['playlist_name'];
+                                ?>
+                            </button>
                         </td>
                     </tr>
                 <?php
@@ -170,14 +165,20 @@ if ($result) {
         <table border="1px">
             <?php
 
-            $query = "SELECT * FROM `$_SESSION[email]`";
+            $query = "SELECT * FROM `song_$_SESSION[email]` WHERE `playlist_id`='1' AND `song_name`='Blueming'";
             $result = mysqli_query($con, $query);
             $name = mysqli_fetch_assoc($result);
             ?>
             <tr class="song_name">
                 <td>
                     <?php
-                    echo $name['playlist_name'];
+
+                    $music_file = $name['link'];
+
+                    echo '<audio controls>
+                            <source src="' . $music_file . '" type="audio/mpeg">
+                            Unfortunately, the audio element is not supported in your browser.
+                        </audio>';
                     ?>
                 </td>
             </tr>
@@ -243,6 +244,13 @@ if ($result) {
             }
         }
     </script>
+
+    <div>
+        <audio controls>
+            <source src="../music_link/BTOB_Beautiful_Pain.mp3" type="audio/mpeg">
+            Unfortunately, the audio element is not supported in your browser.
+        </audio>
+    </div>
 </body>
 
 </html>
