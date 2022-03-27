@@ -42,6 +42,32 @@ CREATE TABLE `music_information` (
 --
 
 INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`, `genre`, `release_year`, `link`) VALUES
+(1, 'Heating Up', 'Polo G', '', 'Hip-Hop', '2022', '../music_link/Polo_G_Heating_up.mp3'),
+(2, 'Baby', 'Justin Bieber', 'My World 2.0', 'Pop', '2010', '../music_link/Justin_Bieber_Baby_ft_Ludacris.mp3'),
+(3, 'Somebody To Love', 'Justin Bieber', 'My World 2.0', 'Pop', '2010', '../music_link/Somebody_To_Love.mp3'),
+(4, 'Peaches (feat. Daniel Caesar & Giveon)', 'Justin Bieber, Daniel Caesar, Giveon', 'Justice', 'R&B', '2021', '../music_link/Justin_Bieber_Peaches_ft_Daniel_Caesar_Giveon.mp3'),
+(5, 'STAY', 'The Kid LAROI', '', 'Pop', '2021', '../music_link/The_Kid_LAROI_Justin_Bieber_STAY.mp3'),
+(6, 'God\'s Plan', 'Drake', 'Scorpion', 'Hip-Hop', '2018', '../music_link/Gods_Plan.mp3'),
+(7, 'No Role Modelz', 'J. Cole', '2014 Forest Hills Drive', 'Hip-Hop', '2014', '../music_link/No_Role_Modelz.mp3'),
+(8, 'Statement', 'G Herbo', '', 'Hip-Hop', '2020', '../music_link/G_Herbo_Statement.mp3'),
+(9, 'Empty', 'Juice WRLD', 'Death Race For Love', 'Hip-Hop', '2019', '../music_link/Juice_WRLD_Empty.mp3'),
+(10, 'For Tonight', 'Giveon', '', 'R&B', '2021', '../music_link/Giveon_For_Tonight.mp3'),
+(11, 'Home', 'SEVENTEEN', '', 'K-Pop', '2019', '../music_link/SEVENTEEN_Home.mp3'),
+(12, 'Controlla', 'Drake', 'Views', 'R&B', '2016', '../music_link/Drake_Controlla.mp3'),
+(13, 'Wants and Needs (feat. Lil Baby)', 'Drake, Lil Baby', '', 'Hip-Hop', '2021', '../music_link/Wants_and_Needs.mp3'),
+(14, 'Fine China', 'Future, Juice WRLD', 'Future & juice WRLD Present... WRLD ON DRUGS', 'Hip-Hop', '2018', '../music_link/Future_Juice WRLD_Fine_China.mp3'),
+(15, 'Cigarettes', 'Juice WRLD', 'Fighting Demons', 'Rock', '2021', '../music_link/Juice_WRLD_Cigarettes.mp3'),
+(16, 'Never Recover (Lil Baby & Gunna, Drake)', 'Lil Baby, Gunna, Drake', 'Drip Harder', 'Hip-Hop', '2018', '../music_link/LilBaby_Gunna_Drake_Never_Recover.mp3'),
+(17, 'Mask Off', 'Future', 'Future', 'Hip-Hop', '2017', '../music_link/Future_Mask_Off.mp3'),
+(18, 'bloody valentine', 'Machine Gun Kelly', 'Tickets To My DownFall', 'Rock', '2020', '../music_link/Machine_Gun_Kelly_Bloody_Valentine.mp3'),
+(19, 'parents', 'YUNGBLUD', 'weird!', 'Rock', '2020', '../music_link/yungblud_parents.mp3'),
+(20, 'Look What God Gave Her', 'Thomas Rhett', 'Center Point Road', 'Country', '2019', '../music_link/Thomas_Rhett_Look_What_God_Gave_Her.mp3'),
+(21, 'Old Town Road', 'Lil Nas X', '', 'Country', '2017', '../music_link/Lil_Nas_X_Old_Town_Road_ft_Billy_Ray_Cyrus.mp3'),
+(22, 'Loud', 'R5', 'Louder', 'Rock', '2013', '../music_link/R5_Loud.mp3'),
+(23, 'Forget About You', 'R5', 'Louder', 'Rock', '2013', '../music_link/R5_Forget_About_You.mp3'),
+(24, 'Company', 'Justin Bieber', 'Purpose', 'Pop', '2015', '../music_link/Justin_Bieber_Company.mp3');
+
+INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`, `genre`, `release_year`, `link`) VALUES
 (26, 'Lovesick Girls', 'Blackpink', 'The Album', 'K-POP', '2020', '../music_link/Blackpink_Lovesick_Girls.mp3'),
 (27, 'Ddu-Du Ddu-Du', 'Blackpink', 'Square Up - EP', 'K-POP', '2018', '../music_link/Blackpink_Ddu_Du_Ddu_Du.mp3'),
 (28, 'As If It\'s Your Last', 'Blackpink', 'As If It\'s Your Last - Single', 'K-POP', '2017', '../music_link/Blackpink_As_If_Its_Your_Last.mp3'),
