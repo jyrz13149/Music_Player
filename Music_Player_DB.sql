@@ -60,37 +60,6 @@ CREATE TABLE `music_information` (
   `link` varchar(1024) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- Dumping data for table `music_information`
---
-
-INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`, `genre`, `release_year`, `link`) VALUES
-(1, 'Dynamite', 'BTS', 'BE', 'K-Pop', '2020', 'bts.com/dynamite'),
-(2, 'Baby', 'Justin Bieber', 'My World 2.0', 'Pop', '2010', 'justin/bieber/baby.com'),
-(3, 'Somebody To Love', 'Justin Bieber', 'My World 2.0', 'Pop', '2010', 'justin/bieber/somebody.com'),
-(4, 'Peaches (feat. Daniel Caesar & Giveon)', 'Justin Bieber, Daniel Caesar, Giveon', 'Justice', 'R&B', '2021', 'jb/site/peaches.com'),
-(5, 'STAY', 'The Kid LAROI', '', 'Pop', '2021', 'kid/stay.com'),
-(6, 'God\'s Plan', 'Drake', 'Scorpion', 'Hip-Hop', '2018', 'drake/god.com'),
-(7, 'No Role Modelz', 'J. Cole', '2014 Forest Hills Drive', 'Hip-Hop', '2014', 'jcole/no.com'),
-(8, 'Statement', 'G Herbo', '', 'Hip-Hop', '2020', 'herbo/statement.com'),
-(9, 'Empty', 'Juice WRLD', 'Death Race For Love', 'Hip-Hop', '2019', 'juice/empty.com'),
-(10, 'Butter', 'BTS', '', 'K-Pop', '2021', 'bts/butter.com'),
-(11, 'I CANT STOP ME', 'TWICE', 'Eyes Wide Open', 'K-Pop', '2020', 'twice/stop.com'),
-(12, 'Home', 'SEVENTEEN', '', 'K-Pop', '2019', 'seven/home.com'),
-(13, 'Controlla', 'Drake', 'Views', 'R&B', '2016', 'drake/controlla.com'),
-(14, 'Wants and Needs (feat. Lil Baby)', 'Drake, Lil Baby', '', 'Hip-Hop', '2021', 'drake/wants.com'),
-(15, 'Fine China', 'Future, Juice WRLD', 'Future & juice WRLD Present... WRLD ON DRUGS', 'Hip-Hop', '2018', 'juice/fine.com'),
-(16, 'Cigarettes', 'Juice WRLD', 'Fighting Demons', 'Rock', '2021', 'juice/cigarettes.com'),
-(17, 'Never Recover (Lil Baby & Gunna, Drake)', 'Lil Baby, Gunna, Drake', 'Drip Harder', 'Hip-Hop', '2018', 'lilbaby/recover.com'),
-(18, 'Mask Off', 'Future', 'Future', 'Hip-Hop', '2017', 'future/maskoff.com'),
-(19, 'bloody valentine', 'Machine Gun Kelly', 'Tickets To My DownFall', 'Rock', '2020', 'mgk/blood.com'),
-(20, 'parents', 'YUNGBLUD', 'weird!', 'Rock', '2020', 'yung/parents.com'),
-(21, 'Look What God Gave Her', 'Thomas Rhett', 'Center Point Road', 'Country', '2019', 'thomas/god.com'),
-(22, 'Old Town Road', 'Lil Nas X', '', 'Country', '2017', 'nasx/road.com'),
-(23, 'Loud', 'R5', 'Louder', 'Rock', '2013', 'r5/loud.com'),
-(24, 'Forget About You', 'R5', 'Louder', 'Rock', '2013', 'r5/forget.com'),
-(25, 'Company', 'Justin Bieber', 'Purpose', 'Pop', '2015', 'jb/comp.com');
-
 -- --------------------------------------------------------
 
 --
