@@ -27,7 +27,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Roboto+Condensed:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     
         <!-- The logout button and home button, give it functionality later -->
-        <input type="image" src="images/power-off.png" id="logOutButton" onclick="logout()">
+        <input type="image" src="images/logout.png" id="logOutButton" onclick="logout()">
         <input type="image" src="images/home.png" id="homeButton" onclick="home()">
     </header>
 
