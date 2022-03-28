@@ -88,6 +88,70 @@
                 </thead>
                 <tbody>
                     <?php
+                    if(isset($_REQUEST['search_input']))
+                    {
+                        $search = $_REQUEST['search_input'];
+                        if(strlen(trim($search))<=0)
+                        {
+                            echo "<p class=\"resultsPHP\">";
+                            echo "Enter Info";
+                            echo "</p>";
+                        }
+                        $sql = "SELECT * from music_information
+                                WHERE song_name LIKE '".$search."%' 
+                                OR  artist_name LIKE '".$search."%' 
+                                OR  album_name LIKE '".$search."%' 
+                                OR  genre LIKE '".$search."%' 
+                                OR  release_year LIKE '".$search."%'";
+                                        
+                                 // goes to the data base with our quere and retreives the desired info
+                                $results = mysqli_query($con, $sql);
+                                // checks if the return if was greater then 0
+                                if(mysqli_num_rows($results)>0)
+                                {
+                                    // makes row array hold each field of the info stored in the data base
+                                    while($searchRow = mysqli_fetch_array($results))
+                                    {
+                                        $song = $searchRow[1];
+                                        $artist = $searchRow[2];
+                                        $album = $searchRow[3];
+                                        $genre = $searchRow[4];
+                                        $year = $searchRow[5];
+                                        ?>
+                                        <tr class="brand">
+                                            <td><?php echo $song ?></td>
+                                            <td><?php echo $artist ?></td>
+                                            <td><?php echo $album ?></td>
+                                            <td><?php echo $genre ?></td>
+                                            <td><?php echo $year ?></td>
+                                            <td>
+                                                <div class="dropdown" id = options>
+                                                    <button class="dropbtn">...</button>
+                                                    <div class="dropdown-content">
+                                                        <a href="./song_pages/song_page.php" class="brand2">Information</a>
+                                                    <form method="POST" action="add_to_play.php">
+                                                        <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
+                                                        <input type="submit" name="submit" value="Add To Playlist ploix"/>
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <br>
+                                        <?php
+                                    }
+                                }
+                                    // if the user types some letters that arent in the database
+                                else
+                                {
+                                    ?>
+                                    <tr>
+                                    <td>No Results</td>
+                                    </tr>
+                                    <?php
+                                }       
+                    }
+                    
                       //include('C:\xampp\htdocs\Music_Player\logged_in\home.php');
                     if(isset($_POST['search']) and isset($_POST['genre']) and isset($_POST['year']))
                     {
@@ -157,13 +221,13 @@
                             if(mysqli_num_rows($results)>0)
                             {
                                 // makes row array hold each field of the info stored in the data base
-                                while($row = mysqli_fetch_array($results))
+                                while($searchRow = mysqli_fetch_array($results))
                                 {
-                                    $song = $row[1];
-                                    $artist = $row[2];
-                                    $album = $row[3];
-                                    $genre = $row[4];
-                                    $year = $row[5];
+                                    $song = $searchRow[1];
+                                    $artist = $searchRow[2];
+                                    $album = $searchRow[3];
+                                    $genre = $searchRow[4];
+                                    $year = $searchRow[5];
 
                                     ?>
                                     <tr class="brand">
@@ -176,16 +240,19 @@
                                             <div class="dropdown" id = options>
                                                 <button class="dropbtn">...</button>
                                                 <div class="dropdown-content">
-                                                    <a href="#" class="brand2">Information</a>
-                                                    <a href="add_to_play.php" class="brand2">Add To Playlist</a>
+                                                    <a href="./song_pages/song_page.php" class="brand2">Information</a>
+                                                    <form method="POST" action="add_to_play.php">
+                                                        <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
+                                                        <input type="submit" name="submit" value="Add To Playlist ploix"/>
+                                                    </form>
                                                 </div>
                                                     </div>
                                         </td>
                                     </tr>
                                     <br>
                                     <?php
-
                                 }
+                                
                             }
                             // if the user types some letters that arent in the database
                             else
