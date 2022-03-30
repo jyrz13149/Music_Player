@@ -174,21 +174,21 @@ div.playlists div.lists {
   height: 250px;
   overflow-y: auto;
   overflow-x: hidden;
-  direction: rtl;
-  margin-left: 250px;
+  direction: ltr;
+  margin-left: 290px;
 }
 
 div.playlists div.lists table {
   background-color: transparent;
   width: 800px;
   border: none;
-  margin-left: 290px;
+  margin-left: 26px;
 }
 
 div.playlists div.lists table tr.names {
   background-color: lightgray;
   color: black;
-  height: 70px;
+  height: 65px;
   text-align: center;
 }
 
@@ -201,7 +201,7 @@ div.playlists div.lists table tr.names td {
 div.playlists div.lists table tr.names td button {
   text-align: center;
   align-items: center;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
   border: none;
   border-radius: 15px;
