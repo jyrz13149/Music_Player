@@ -65,9 +65,7 @@ INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`,
 (21, 'Old Town Road', 'Lil Nas X', '', 'Country', '2017', '../music_link/Lil_Nas_X_Old_Town_Road_ft_Billy_Ray_Cyrus.mp3'),
 (22, 'Loud', 'R5', 'Louder', 'Rock', '2013', '../music_link/R5_Loud.mp3'),
 (23, 'Forget About You', 'R5', 'Louder', 'Rock', '2013', '../music_link/R5_Forget_About_You.mp3'),
-(24, 'Company', 'Justin Bieber', 'Purpose', 'Pop', '2015', '../music_link/Justin_Bieber_Company.mp3');
-
-INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`, `genre`, `release_year`, `link`) VALUES
+(24, 'Company', 'Justin Bieber', 'Purpose', 'Pop', '2015', '../music_link/Justin_Bieber_Company.mp3'),
 (26, 'Lovesick Girls', 'Blackpink', 'The Album', 'K-POP', '2020', '../music_link/Blackpink_Lovesick_Girls.mp3'),
 (27, 'Ddu-Du Ddu-Du', 'Blackpink', 'Square Up - EP', 'K-POP', '2018', '../music_link/Blackpink_Ddu_Du_Ddu_Du.mp3'),
 (28, 'As If It\'s Your Last', 'Blackpink', 'As If It\'s Your Last - Single', 'K-POP', '2017', '../music_link/Blackpink_As_If_Its_Your_Last.mp3'),
@@ -106,7 +104,24 @@ INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`,
 (61, 'Red Flavor', 'Red Velvet', 'The Red Summer - Summer Mini Album - EP', 'K-POP', '2017', '../music_link/Red_Velvet_Red_Flavor.mp3'),
 (62, 'Umpah Umpah', 'Red Velvet', '\'The ReVe Festival\' Day 2 - EP', 'K-POP', '2019', '../music_link/Red_Velvet_Umpah_Umpah.mp3'),
 (63, 'Darling', 'Taeyang', 'White Night', 'K-POP', '2017', '../music_link/Taeyang_Darling.mp3'),
-(64, 'Wake Me Up', 'Taeyang', 'White Night', 'K-POP', '2017', '../music_link/Taeyang_Wake_Me_Up.mp3');
+(64, 'Wake Me Up', 'Taeyang', 'White Night', 'K-POP', '2017', '../music_link/Taeyang_Wake_Me_Up.mp3'),
+
+-- Exdols added songs
+(65, 'MONTERO', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/MONTERO.mp3'),
+(66, 'SCOOP', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/SCOOP.mp3'),
+(67, 'DONT WANT IT', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/DONT_WANT_IT.mp3'),
+(68, 'SUN GOES DOWN', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/SUN_GOES_DOWN.mp3'),
+(69, 'THATS WHAT I WANT', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/THATS_WHAT_I_WANT.mp3'),
+(70, 'No Worries', 'Lil Wayne', 'I Am Not A Human Being II', 'Hip-Hop', '2013', '../music_link/No_Worries.mp3'),
+(71, 'Days And Days', 'Lil Wayne', 'I Am Not A Human Being II', 'Hip-Hop', '2013', '../music_link/Days_And_Days.mp3'),
+(72, 'Gunwalk', 'Lil Wayne', 'I Am Not A Human Being II', 'Hip-Hop', '2013', '../music_link/Gunwalk.mp3'),
+(73, 'Rich As Trucks', 'Lil Wayne', 'I Am Not A Human Being II', 'Hip-Hop', '2013', '../music_link/Rich_As_Trucks.mp3'),
+(74, 'Love Me', 'Lil Wayne', 'I Am Not A Human Being II', 'Hip-Hop', '2013', '../music_link/Love_Me.mp3'),
+(75, 'Jail', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Jail.mp3'),
+(76, 'Off The Grid', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Off_The_Grid.mp3'),
+(77, 'Praise God', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Praise_God.mp3'),
+(78, 'Heaven and Hell', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Heaven_and_Hell.mp3'),
+(79, 'Hurricane', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Hurricane.mp3');
 
 --
 -- Indexes for dumped tables
