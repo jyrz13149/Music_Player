@@ -188,7 +188,7 @@ div.playlists div.lists table {
 div.playlists div.lists table tr.names {
   background-color: lightgray;
   color: black;
-  height: 60px;
+  height: 70px;
   text-align: center;
 }
 
@@ -196,8 +196,16 @@ div.playlists div.lists table tr.names td {
   border-radius: 15px;
   border-color: black;
   border-width: 5px;
-  font-size: 34px;
+}
+
+div.playlists div.lists table tr.names td button {
+  text-align: center;
+  align-items: center;
+  font-size: 28px;
   font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  background-color: lightgray;
 }
 
 div.playlists div.playlist_actions {
