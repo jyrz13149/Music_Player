@@ -53,6 +53,10 @@
         var songLinks = <?php echo json_encode($song_links);?>;
         var songNames = <?php echo json_encode($song_names);?>;
         var loopOn = false;
+
+        music.addEventListener('ended', function(){
+            nextSong();
+        });
     </script>
 
 </head>
