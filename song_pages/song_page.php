@@ -3,6 +3,20 @@
 require('../db_connection.php');
 session_start();
 
+$song_name = mysqli_real_escape_string($con, $_SESSION['current_song']);
+
+$query = "SELECT * FROM `music_information` WHERE `song_name` = '$song_name'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_assoc($result);
+
+$song_id = $row['id'];
+$song_name = $row['song_name'];
+$album = $row['album_name'];
+$artist = $row['artist_name'];
+$year = $row['release_year'];
+$genre = $row['genre'];
+
+
 ?>
 
 <!DOCTYPE HTML>
@@ -30,7 +44,7 @@ session_start();
     </header>
 
     <section class="content-wrap second_header">
-        <h2">Songs</h2>
+        <h2">Song Information</h2>
     </section>
     
 
@@ -41,22 +55,27 @@ session_start();
             </div>
 
             <div class="column">
-                <h3>Song Name</h3>
+                <h3>Song Name: <?php echo $song_name ?></h3>
 
-                <button class="btn" onClick="location.href = ''">Album Name</button>
+                <button class="btn" onClick="location.href = ''">Album: <?php echo $album ?></button>
 
-                <button class="btn" onClick="location.href = ''">Artist Name</button>
+                <button class="btn" onClick="location.href = ''">Artist: <?php echo $artist ?></button>
 
-                <h3>Release Year</h3>
+                <h3>Release Year: <?php echo $year ?></h3>
 
-                <h3>Genre</h3>
+                <h3>Genre: <?php echo $genre ?></h3>
             </div>
 
             <div class="column">
                 <div class="dropdown">
                     <button class="dropdown_btn" onClick="location.href = ''"><img src="../images/more.png"></button>
                     <div class="dropdown_content">
-                        <a href="">Add to Playlist</a>
+                        <form action="../add_to_play.php" method='POST'>
+                            <button type="submit" value="<?php echo $song_id ?>" name="songToAdd">
+                                Add to Playlist
+                            </button>
+                        </form>
+                        <!-- <a href="../add_to_play.php">Add to Playlist</a> -->
                     </div>
                 </div>
             </div>
