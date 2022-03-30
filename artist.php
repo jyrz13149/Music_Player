@@ -1,6 +1,12 @@
 <?php
   require ('db_connection.php');
   session_start();
+
+  $artist_name = $_POST['artistName'];
+  $_SESSION['current_artist'] = $artist_name;
+
+  $query = "SELECT album_name FROM `music_information` WHERE `artist_name` = '$artistName'";
+
 ?>
 
 <!DOCTYPE html>
@@ -9,10 +15,7 @@
 <style>
     .grid-container {
         background-color: black;
-        position: relative;
-        width: 90;
-        margin-left: 25px;
-        margin-right: 25px;
+        width: 100%;
         align-items: center;
     }
     
@@ -22,11 +25,10 @@
     
     .card {
         background-color: black;
-        position: relative;
         align-items: center;
         height: 175px;
-        width: 100;
-        margin: 50px;
+        width: 100%;
+        margin-bottom: 50px;
     }
     
     button {
@@ -51,7 +53,6 @@
         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-style: normal;
         text-align: center;
-        margin: 50px;
         font-size: 40px;
     }
     
@@ -95,41 +96,54 @@
 </style>
 <!-- Toolbar -->
 <div class="toolbar">
-    <input id="logout-button" type="image" alt="Logout Button" src="https://media.discordapp.net/attachments/953341474777469010/953347203185926234/power-off.png?width=461&height=461" width="40" />
+    <input id="logout-button" type="image" src="images/logout.png" onclick="logout()" width="40" />
     <div class="spacer"></div>
     <div>
         <h1> Goatify </h1>
     </div>
     <div class="spacer"></div>
-    <input id="home-button" type="image" alt="Home Button" src="https://media.discordapp.net/attachments/953341474777469010/953347159015714878/home.png?width=461&height=461" width="40" />
+    <input id="home-button" type="image" src="images/home.png" onclick="home()" width="40" />
 </div>
 
 <div>
-    <h2>Artist Name</h2>
+    <h2><?php echo $artist_name ?></h2>
     <br>
     <div class="grid-container">
         <div class="card-list">
-            <div>
-                <div class="card">
-                    <button id="album-title">
-                        <h3>Album 1</h3>
-                    </button>
-                    <h4>2022</h4>
+        <?php
+            $sql = "SELECT album_name,release_year FROM `music_information` WHERE `artist_name` = '$artist_name' GROUP BY album_name";
+            $results = mysqli_query($con, $sql);
+            while($searchRow = mysqli_fetch_array($results))
+            {
+                $album_name = $searchRow[0];
+                $release_year = $searchRow[1];
+                ?>
+                <div>
+                    <div class="card">
+                    <form method="POST" action="album_page.php">
+                        <button type="submit" value="<?php echo $album_name ?>" name="albumName" id="album-title">
+                            <h3><?php echo $album_name ?></h3>
+                        </button>
+                    </form>
+                        <h4><?php echo $release_year ?></h4>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div class="card">
-                    <button id="album-title">
-                        <h3>Album 2</h3>
-                    </button>
-                    <h4>2022</h4>
-                </div>
-            </div>
+                <?php
+            }
+        ?>
         </div>
     </div>
 </div>
 
 <script>
+    function logout()
+    {
+        window.location.href="logout.php"
+    }
+    function home()
+    {
+        window.location.href="./logged_in/home.php"
+    }
     /** Based on the screen size, switch from standard to one column per row */
     cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
         map(({

@@ -56,10 +56,13 @@ $genre = $row['genre'];
 
             <div class="column">
                 <h3>Song Name: <?php echo $song_name ?></h3>
+                <form action="../album_page.php" method='POST'>
+                    <button type="submit" value="<?php echo $album ?>" name="albumName" class="btn" onClick="location.href = ''">Album: <?php echo $album ?></button>
+                </form>
 
-                <button class="btn" onClick="location.href = ''">Album: <?php echo $album ?></button>
-
-                <button class="btn" onClick="location.href = ''">Artist: <?php echo $artist ?></button>
+                <form action="../artist.php" method='POST'>
+                    <button class="btn" type="submit" value="<?php echo $artist ?>" name="artistName">Artist: <?php echo $artist ?></button>
+                </form>
 
                 <h3>Release Year: <?php echo $year ?></h3>
 

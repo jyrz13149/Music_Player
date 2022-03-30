@@ -1,3 +1,19 @@
+<?php
+  require ('db_connection.php');
+  session_start();
+  $album_name = $_POST['albumName'];
+  $_SESSION['current_album'] = $album_name;
+
+$query = "SELECT * FROM `music_information` WHERE `album_name` = '$album_name'";
+$result = mysqli_query($con, $query);
+$row = mysqli_fetch_assoc($result);
+$artist = $row['artist_name'];
+$year = $row['release_year'];
+$genre = $row['genre'];
+?>
+
+
+<!DOCTYPE html>
 <html style="background-color:black;">
 <style>
     .grid-container {
@@ -27,6 +43,7 @@
     }
     
     h3 {
+        margin: 0;
         font-size: 40px;
         color: white;
         text-align: center;
@@ -129,55 +146,67 @@
 </style>
 <!-- Toolbar -->
 <div class="toolbar">
-    <input id="logout-button" type="image" alt="Logout Button" src="https://media.discordapp.net/attachments/953341474777469010/953347203185926234/power-off.png?width=461&height=461" width="40" />
+    <input id="logout-button" type="image" src="images/logout.png" onclick="logout()" width="40" />
     <div class="spacer"></div>
     <div>
         <h1> Goatify </h1>
     </div>
     <div class="spacer"></div>
-    <input id="home-button" type="image" alt="Home Button" src="https://media.discordapp.net/attachments/953341474777469010/953347159015714878/home.png?width=461&height=461" width="40" />
+    <input id="home-button" type="image" src="images/home.png" onclick="home()" width="40" />
 </div>
 
 <div>
-    <h2 class="album-title">Album Name</h2>
-    <h3 class="artis-name">Artist Name</h3>
-    <h4 class="genre">Genre</h4>
-    <h5 class="year">Year</h5>
+    <h2 class="album-title"><?php echo $album_name ?></h2>
+    <h3 class="artis-name"><?php echo $artist ?></h3>
+    <h4 class="genre"><?php echo $genre ?></h4>
+    <h5 class="year"><?php echo $year ?></h5>
     <br>
-    <div class="song-cell">
+    <?php
+    $sql = "SELECT * FROM `music_information` WHERE `album_name` = '$album_name'";
+    $results = mysqli_query($con, $sql);
+    while($searchRow = mysqli_fetch_array($results))
+    {
+        $song_id = $searchRow[0];
+        $song = $searchRow[1];
+        ?>
+        <tr class="brand">
+            <div class="song-cell">
         <div>
-            <h4 class="song-name">Song Name</h4>
+            <h4 class="song-name"><?php echo $song ?></h4>
         </div>
         <div class="spacer"></div>
         <div class="dropdown">
-            <button class="dropbtn"><input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" /> 
+            <button class="dropbtn" onClick="location.href = ''"><input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" /> 
               <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#">Information</a>
-                <a href="#">Add to playlist</a>
+            <form method="POST" action="song_pages/song_redirect.php">
+                <button type="submit" name="song_info" value="<?php echo $song ?>">Information</button>
+            </form>
+            <form action="add_to_play.php" method='POST'>
+                <button type="submit" value="<?php echo $song_id ?>" name="songToAdd">Add to playlist</button>
+            </form>
             </div>
         </div>
     </div>
-    <div class="song-cell">
-        <div>
-            <h4 class="song-name">Song Name</h4>
-        </div>
-        <div class="spacer"></div>
-        <div class="dropdown">
-            <button class="dropbtn"><input type="image" id="more-button" src="https://media.discordapp.net/attachments/953341474777469010/953724318410489877/more.png?width=373&height=186" style="margin: 0; border-radius: 10px;" height="20" width="40" /> 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Information</a>
-                <a href="#">Add to playlist</a>
-            </div>
-        </div>
-    </div>
+        </tr>
+        <br>
+        <?php
+    }
+    ?>
 
 </div>
 
 <script>
+    function logout()
+    {
+        window.location.href="logout.php"
+    }
+    function home()
+    {
+        window.location.href="./logged_in/home.php"
+    }
+
     /** Where we'll fetch all the songs for this album */
 </script>
 
