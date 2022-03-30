@@ -23,7 +23,7 @@ header {
   flex-direction: row;
   align-items: center;
   width: 1430px;
-  background-color: grey;
+  background-color: transparent;
   color: white;
   padding: 20px 0;
 }
