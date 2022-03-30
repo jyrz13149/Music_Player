@@ -251,13 +251,6 @@ if ($result) {
             }
         }
     </script>
-
-    <div>
-        <audio controls>
-            <source src="../music_link/BTOB_Beautiful_Pain.mp3" type="audio/mpeg">
-            Unfortunately, the audio element is not supported in your browser.
-        </audio>
-    </div>
 </body>
 
 </html>
