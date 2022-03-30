@@ -188,7 +188,7 @@ div.playlists div.lists table {
 div.playlists div.lists table tr.names {
   background-color: lightgray;
   color: black;
-  height: 65px;
+  height: auto;
   text-align: center;
 }
 
@@ -201,7 +201,7 @@ div.playlists div.lists table tr.names td {
 div.playlists div.lists table tr.names td button {
   text-align: center;
   align-items: center;
-  font-size: 36px;
+  font-size: 44px;
   font-weight: bold;
   border: none;
   border-radius: 15px;
