@@ -96,25 +96,32 @@ if ($result) {
     <div class="playlists">
         <div class="lists">
             <table border="1px">
-                <?php
+                <form action='../playlist_pages/redirect.php' method='POST'>
+                    <?php
 
-                $query = "SELECT * FROM `$_SESSION[email]`";
-                $result = mysqli_query($con, $query);
+                    $query = "SELECT * FROM `$_SESSION[email]`";
+                    $result = mysqli_query($con, $query);
 
-                while ($name = mysqli_fetch_assoc($result)) {
-                ?>
-                    <tr class="names">
-                        <td>
-                            <button>
-                                <?php
-                                echo $name['playlist_name'];
-                                ?>
-                            </button>
-                        </td>
-                    </tr>
-                <?php
-                }
-                ?>
+                    $playlist_names = array();
+                    $i = 0;
+
+                    while ($name = mysqli_fetch_assoc($result)) {
+                        array_push($playlist_names, $name['playlist_name']);
+                    ?>
+                        <tr class="names">
+                            <td>
+                                <button type='submit' <?php echo "value='$playlist_names[$i]'"?> name='playlist_button'>
+                                    <?php
+                                        echo $playlist_names[$i];
+                                    ?>
+                                </button>
+                            </td>
+                        </tr>
+                    <?php
+                    $i++;
+                    }
+                    ?>
+                </form>
             </table>
         </div>
         <div class="playlist_actions">
