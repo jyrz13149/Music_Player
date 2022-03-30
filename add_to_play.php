@@ -57,6 +57,7 @@
                                             <!-- make the action go to that playlist page -->
                                             <form method="POST" action="">
                                                 <input type="hidden" name="playlistToAddTo" value="<?php echo $playlistRow[0]; ?>"/>
+                                                <input type="hidden" name="playlistToAddToName" value="<?php echo $playlistName; ?>"/>
                                                 <input type="submit" name="submit" id="playlistBtn" value="<?php echo $playlistName; ?>"/>
                                             </form>
                                         </td>
@@ -75,6 +76,8 @@
                     {
                         $playlistToAddTo = $_POST['playlistToAddTo'];
                         $songToAddTo = $_SESSION['songToAdd'];
+
+                        $_SESSION['current_playlist'] = $_POST['playlistToAddToName'];
 
                         // insert into $query = "INSERT INTO `$_SESSION[email]`(`playlist_name`) VALUES ('$_POST[playlist_name]')";
                         // do the whole quere and add to that table in this if statement
@@ -100,7 +103,7 @@
                         echo "
                                     <script>
                                         alert('Added To Playlist'); 
-                                        window.location.href='playlist_pages/playlist_page.php?name=$playlistToAddTo'; 
+                                        window.location.href='playlist_pages/playlist_page.php'; 
                                     </script>
                                     ";
                     }
