@@ -128,7 +128,10 @@
                                                 <div class="dropdown" id = options>
                                                     <button class="dropbtn">...</button>
                                                     <div class="dropdown-content">
-                                                        <a href="./song_pages/song_page.php" class="brand2">Information</a>
+                                                        <form method="POST" action="song_pages/song_redirect.php">
+                                                            <button type="submit" name="song_info" value="<?php echo $song ?>">Information</button>
+                                                        <!-- <a href="./song_pages/redirect_song.php" class="brand2">Information</a> -->
+                                                        </form> 
                                                     <form method="POST" action="add_to_play.php">
                                                         <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
                                                         <input type="submit" name="submit" value="Add To Playlist ploix"/>
@@ -240,7 +243,11 @@
                                             <div class="dropdown" id = options>
                                                 <button class="dropbtn">...</button>
                                                 <div class="dropdown-content">
-                                                    <a href="./song_pages/song_page.php" class="brand2">Information</a>
+                                                    <form method="POST" action="song_pages/song_redirect.php">
+                                                            <button type="submit" name="song_info" value="<?php echo $song ?>">Information</button>
+                                                        <!-- <a href="./song_pages/redirect_song.php" class="brand2">Information</a> -->
+                                                    </form> 
+
                                                     <form method="POST" action="add_to_play.php">
                                                         <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
                                                         <input type="submit" name="submit" value="Add To Playlist ploix"/>
