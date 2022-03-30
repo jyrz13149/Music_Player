@@ -38,6 +38,13 @@ header div{
     font-size: 64px;
 }
 
+.second_header_wrap {
+    max-width: 1400px;
+    width: 85%;
+    margin: 0 auto;
+    padding: 0;
+}
+
 .head {
     display: block;
     text-align: center;
@@ -117,6 +124,7 @@ header button img{
     flex-basis: 100%;
     flex: 1;
     align-items: center;
+    justify-content: center;
 }
 
 .column_song_table:nth-of-type(odd){
@@ -126,6 +134,7 @@ header button img{
 .btns {
     display: inline-flex;
 }
+
 
 .song_action_btn {
     background: none;
