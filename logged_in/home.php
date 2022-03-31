@@ -12,8 +12,7 @@ if ($result) {
 
     if ($result_fetch['playlist_status'] == 1) {
 
-        $email = $result_fetch['email'];
-        $last_song_link = $result_fetch['last_song_ling'];
+        $last_song_link = $result_fetch['last_song_link'];
     } else {
         echo "
             <script>
@@ -23,6 +22,11 @@ if ($result) {
             ";
     }
 }
+
+$query = "SELECT * FROM `song_$_SESSION[email]` WHERE `link`='$last_song_link'";
+$result = mysqli_query($con, $query);
+$fetch_result = mysqli_fetch_assoc($result);
+$song_name = $fetch_result['song_name'];
 
 ?>
 
@@ -175,13 +179,18 @@ if ($result) {
         <table border="1px">
             <tr class="song_name">
                 <td>
-                    <?php
-
-                    echo '<audio controls>
+                    <div class="music">
+                        <button><?php echo $song_name; ?></button>
+                    </div>
+                    <div>
+                        <?php
+                        echo '<audio controls>
                             <source src="' . $last_song_link . '" type="audio/mpeg">
                             Unfortunately, the audio element is not supported in your browser.
                         </audio>';
-                    ?>
+                        ?>
+                    </div>
+
                 </td>
             </tr>
             <?php
