@@ -261,26 +261,24 @@ div.last_song table tr.song_name {
   color: black;
   height: 60px;
   text-align: center;
+  border: none;
 }
 
-div.last_playlist table tr.name td {
-  border-radius: 15px;
-  border-color: black;
-  border-width: 5px;
-  font-size: 34px;
-  font-weight: bold;
-}
-
+div.last_playlist table tr.name td,
 div.last_song table tr.song_name td {
   display: flex;
   flex-direction: row;
   margin: auto;
+  border: none;
 }
 
+div.last_playlist table tr.name td div.last_played_playlist,
 div.last_song table tr.song_name td div.music {
   margin: auto;
+  border: none;
 }
 
+div.last_playlist table tr.name td div.last_played_playlist button,
 div.last_song table tr.song_name td div.music button {
   font-size: 34px;
   font-weight: bold;
