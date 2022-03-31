@@ -11,6 +11,9 @@ if ($result) {
     $result_fetch = mysqli_fetch_assoc($result);
 
     if ($result_fetch['playlist_status'] == 1) {
+
+        $email = $result_fetch['email'];
+        $last_song_link = $result_fetch['last_song_ling'];
     } else {
         echo "
             <script>
@@ -110,15 +113,15 @@ if ($result) {
                     ?>
                         <tr class="names">
                             <td>
-                                <button type='submit' <?php echo "value='$playlist_names[$i]'"?> name='playlist_button'>
+                                <button type='submit' <?php echo "value='$playlist_names[$i]'" ?> name='playlist_button'>
                                     <?php
-                                        echo $playlist_names[$i];
+                                    echo $playlist_names[$i];
                                     ?>
                                 </button>
                             </td>
                         </tr>
                     <?php
-                    $i++;
+                        $i++;
                     }
                     ?>
                 </form>
@@ -170,20 +173,12 @@ if ($result) {
     </div>
     <div class="last_song">
         <table border="1px">
-            <?php
-
-            $query = "SELECT * FROM `song_$_SESSION[email]` WHERE `playlist_id`='1' AND `song_name`='Blueming'";
-            $result = mysqli_query($con, $query);
-            $name = mysqli_fetch_assoc($result);
-            ?>
             <tr class="song_name">
                 <td>
                     <?php
 
-                    $music_file = $name['link'];
-
                     echo '<audio controls>
-                            <source src="' . $music_file . '" type="audio/mpeg">
+                            <source src="' . $last_song_link . '" type="audio/mpeg">
                             Unfortunately, the audio element is not supported in your browser.
                         </audio>';
                     ?>
