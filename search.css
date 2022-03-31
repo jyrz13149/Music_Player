@@ -1,48 +1,78 @@
 /* section for the whole page*/
-#wholePage {
-    background-color: black;
-    color: white;
+body {
+  background-color: black;
+  color: white;
+  font-family: "Roboto Condensed", sans-serif;
 }
 
-/* for positioning make sure to use the absolute and the left and right for the home
-and logout buttons*/
-#logOutButton {
-    position: absolute;
-    left: 50px;
-    height: 50px;
-    width: 50px;
+/* main wrap for page */
+.content_wrap {
+  max-width: 10000px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 60px 0;
 }
 
-#homeButton {
-    position: absolute;
-    right: 50px;
-    height: 50px;
-    width: 50px;
+/* for positioning the home and logout buttons */
+.header_btns {
+  background: none;
+  border: none;
 }
 
-/*This describes the header title*/
-#header {
-    padding-top: 15px;
-    font-size: 60px;
-  }
-  /*This describes the text for title*/
-.brand {
-    font-family: "Roboto Condensed", sans-serif;
-  }
+.header_btns img{
+  max-width: 100px;
+  width: 70%;
+}
+
+/*This describes the style for the main header title*/
+.main_header {
+  font-size: 30px;
+  display: block;
+  text-align: center;
+}
+
+header div{
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
 
 /* search and results*/
+.search_wrap {
+  max-width: 10000px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0;
+}
 
 #search
 {
-  display: flex;
-  justify-content: space-evenly;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
   background: antiquewhite;
-  width: 30cm;
-  height: 50px;
-  padding-top: 130px;    
+  padding: 25px 0;
+}
+
+.options_section {
+  display: inline-flex;
+  justify-content: space-between;
+  color: black;
+}
+
+.options {
+  padding: 5px;
 }
 
 /* both of theses css sections regulate the tables width */
+.results_wrap {
+  max-width: 10000px;
+  width: 85%;
+  margin: 0 auto;
+  padding: 0;
+}
+
 #sections
 {
   color: white;
@@ -50,12 +80,13 @@ and logout buttons*/
 
 #titles
 {
-  padding-top: 50px;
-  bottom: 0px;
+  /* padding-top: 50px; */
+  /* bottom: 0px; */
   background-color: orange;
   color: white;
-  width: 45cm;
+  /* width: 45cm; */
   font-size: 30px;
+  width: 100%;
 }
 
 /* these 2 sections gives the spaceing for each of the columns in the table */
@@ -71,10 +102,12 @@ and logout buttons*/
 /*This describes all the input boxes*/
 .inputSect {
     font-size: 25px;
-    width: 15cm;
+    max-width: 20cm;
+    width: 100%;
+    min-width: 3cm;
     height: 35px;
     border-radius: 100px;
-    /*Let the input text start some px's ahead*/
+    /* Let the input text start some px's ahead */
     padding-left: 10px;
     background-color: #c4c4c4;
 }
@@ -82,7 +115,7 @@ and logout buttons*/
 #searchButton {
     height: 50px;
     width: 50px;
-    padding-left: 50px;
+    padding-left: 25px;
 }
 
 /* describes entire container holding the search results */
@@ -92,22 +125,6 @@ and logout buttons*/
     background: aquamarine;
     width: 35cm;
     height: 100%;
-}
-
-/* for positioning make sure to use the absolute and the left and right for the home
- and logout buttons*/
- #logOutButton {
-    position: absolute;
-    left: 50px;
-    height: 50px;
-    width: 50px;
-}
-
-#homeButton {
-    position: absolute;
-    right: 50px;
-    height: 50px;
-    width: 50px;
 }
 
 /*Drop down section-------------------------------------------*/

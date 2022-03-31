@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 24, 2022 at 09:11 PM
+-- Generation Time: Mar 31, 2022 at 06:58 PM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.1.4
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -105,8 +105,6 @@ INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`,
 (62, 'Umpah Umpah', 'Red Velvet', '\'The ReVe Festival\' Day 2 - EP', 'K-POP', '2019', '../music_link/Red_Velvet_Umpah_Umpah.mp3'),
 (63, 'Darling', 'Taeyang', 'White Night', 'K-POP', '2017', '../music_link/Taeyang_Darling.mp3'),
 (64, 'Wake Me Up', 'Taeyang', 'White Night', 'K-POP', '2017', '../music_link/Taeyang_Wake_Me_Up.mp3'),
-
--- Exdols added songs
 (65, 'MONTERO', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/MONTERO.mp3'),
 (66, 'SCOOP', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/SCOOP.mp3'),
 (67, 'DONT WANT IT', 'Lil Nas X', 'MONTERO', 'Hip-Hop', '2021', '../music_link/DONT_WANT_IT.mp3'),
@@ -121,7 +119,21 @@ INSERT INTO `music_information` (`id`, `song_name`, `artist_name`, `album_name`,
 (76, 'Off The Grid', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Off_The_Grid.mp3'),
 (77, 'Praise God', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Praise_God.mp3'),
 (78, 'Heaven and Hell', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Heaven_and_Hell.mp3'),
-(79, 'Hurricane', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Hurricane.mp3');
+(79, 'Hurricane', 'Kanye West', 'Donda', 'Hip-Hop', '2021', '../music_link/Hurricane.mp3'),
+(80, 'Someone Like You', 'Adele', '21', 'Pop', '2011', '../music_link/Someone_like_you.mp3'),
+(81, 'Ain\'t No Mountain High Enough', 'Marvin Gaye', 'Forever Yours', 'Soul', '1967', '../music_link/mountain_high_enough.mp3'),
+(82, 'All Of The Lights', 'Kanye West', 'My Beautiful Dark Twisted Fantasy', 'Hip-Hop', '2010', '../music_link/All_Of_The_Lights.mp3'),
+(83, 'Remember The Name (feat. Eminem & 50 Cent)', 'Ed Sheeran', 'No.6 Collaborations Project', 'Pop', '2019', '../music_link/Remember_The Name.mp3'),
+(84, 'Hard Skool', 'Guns N\' Roses', 'Hard Skool - Single', 'Hard Rock', '2021', '../music_link/Hard_Skool.mp3'),
+(85, 'Hooked On A Feeling', 'Blue Swede', 'Hooked on a Feeling', 'Rock', '1974', '../music_link/Hooked_on_a_Feeling.mp3'),
+(86, 'My Life', 'Imagine Dragons', 'Mercury - Act I', 'Alternative', '2021', '../music_link/my_life.mp3'),
+(87, 'Jesus Walks', 'Kanye West', 'The College Dropout', 'Hip-Hop', '2004', '../music_link/Jesus_Walks.mp3'),
+(88, 'Black Summer', 'Red Hot Chili Peppers', 'Unlimited Love', 'Alternative', '2022', '../music_link/Black_Summer.mp3'),
+(89, 'Can\'t Stop', 'Red Hot Chili Peppers', 'By the Way', 'Alternative', '2002', '../music_link/Cant_Stop.mp3'),
+(90, 'Set Fire to the Rain', 'Adele', '21', 'Pop', '2011', '../music_link/Set_Fire_to_the_Rain.mp3'),
+(91, 'Stronger', 'Kanye West', 'Graduation', 'Hip-Hop', '2007', '../music_link/Stronger.mp3'),
+(92, 'Face Off (ft. The Rock)', 'Tech N9ne', 'ASIN9NE', 'Rap', '2021', '../music_link/Face_Off.mp3'),
+(93, 'Is There Someone Else', 'The Weeknd', 'Dawn FM', 'R&B', '2022', '../music_link/Is_There_Someone_Else.mp3');
 
 --
 -- Indexes for dumped tables
@@ -141,7 +153,7 @@ ALTER TABLE `music_information`
 -- AUTO_INCREMENT for table `music_information`
 --
 ALTER TABLE `music_information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
