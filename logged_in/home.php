@@ -180,7 +180,7 @@ $song_name = $fetch_result['song_name'];
             <tr class="song_name">
                 <td>
                     <div class="music">
-                        <button><?php echo $song_name; ?></button>
+                        <button onclick="<?php $_SESSION['current_song'] = $song_name; ?> location.href = '../song_pages/song_page.php'"><?php echo $song_name; ?></button>
                     </div>
                     <div>
                         <?php
