@@ -13,7 +13,32 @@ if ($result) {
     if ($result_fetch['playlist_status'] == 1) {
 
         $last_song_link = $result_fetch['last_song_link'];
+
+        if ($last_song_link == null) {
+
+            $song_name = "No Song Played Yet";
+            $song_status = 0;
+        } else {
+
+            $query = "SELECT * FROM `song_$_SESSION[email]` WHERE `link`='$last_song_link'";
+            $result = mysqli_query($con, $query);
+            $fetch_result = mysqli_fetch_assoc($result);
+
+            $song_name = $fetch_result['song_name'];
+            $song_status = 1;
+        }
+
         $last_playlist = $result_fetch['last_playlist'];
+
+        if ($last_playlist == null) {
+
+            $last_playlist_name = "No Playlist Played Yet";
+            $playlist_status = 0;
+        } else {
+
+            $last_playlist_name = $last_playlist;
+            $playlist_status = 1;
+        }
     } else {
         echo "
             <script>
@@ -23,11 +48,6 @@ if ($result) {
             ";
     }
 }
-
-$query = "SELECT * FROM `song_$_SESSION[email]` WHERE `link`='$last_song_link'";
-$result = mysqli_query($con, $query);
-$fetch_result = mysqli_fetch_assoc($result);
-$song_name = $fetch_result['song_name'];
 
 ?>
 
@@ -154,7 +174,11 @@ $song_name = $fetch_result['song_name'];
             <tr class="name">
                 <td>
                     <div class="last_played_playlist">
-                        <button onclick="<?php $_SESSION['current_playlist'] = $last_playlist; ?> location.href = '../playlist_pages/playlist_page.php'"><?php echo $last_playlist; ?></button>
+                        <?php if ($playlist_status == 0) { ?>
+                            <button disabled><?php echo $last_playlist_name; ?></button>
+                        <?php } else { ?>
+                            <button onclick="<?php $_SESSION['current_playlist'] = $last_playlist; ?> location.href = '../playlist_pages/playlist_page.php'"><?php echo $last_playlist_name; ?></button>
+                        <?php } ?>
                     </div>
                 </td>
             </tr>
@@ -175,7 +199,11 @@ $song_name = $fetch_result['song_name'];
             <tr class="song_name">
                 <td>
                     <div class="music">
-                        <button onclick="<?php $_SESSION['current_song'] = $song_name; ?> location.href = '../song_pages/song_page.php'"><?php echo $song_name; ?></button>
+                        <?php if ($song_status == 0) { ?>
+                            <button disabled><?php echo $song_name; ?></button>
+                        <?php } else { ?>
+                            <button onclick="<?php $_SESSION['current_song'] = $song_name; ?> location.href = '../song_pages/song_page.php'"><?php echo $song_name; ?></button>
+                        <?php } ?>
                     </div>
                     <div>
                         <?php
