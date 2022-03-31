@@ -13,6 +13,7 @@ if ($result) {
     if ($result_fetch['playlist_status'] == 1) {
 
         $last_song_link = $result_fetch['last_song_link'];
+        $last_playlist = $result_fetch['last_playlist'];
     } else {
         echo "
             <script>
@@ -150,17 +151,11 @@ $song_name = $fetch_result['song_name'];
     </div>
     <div class="last_playlist">
         <table border="1px">
-            <?php
-
-            $query = "SELECT * FROM `$_SESSION[email]`";
-            $result = mysqli_query($con, $query);
-            $name = mysqli_fetch_assoc($result);
-            ?>
             <tr class="name">
                 <td>
-                    <?php
-                    echo $name['playlist_name'];
-                    ?>
+                    <div class="last_played_playlist">
+                        <button onclick="<?php $_SESSION['current_playlist'] = $last_playlist; ?> location.href = '../playlist_pages/playlist_page.php'"><?php echo $last_playlist; ?></button>
+                    </div>
                 </td>
             </tr>
             <?php
