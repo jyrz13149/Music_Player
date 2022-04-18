@@ -7,6 +7,14 @@ html {
     
 }
 
+button {
+    cursor: pointer;
+}
+
+#seekbar {
+    width: 70%;
+}
+
 body {
     background: #000000;
     color: #FFFFFF;

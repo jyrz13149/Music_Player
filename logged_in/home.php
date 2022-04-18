@@ -28,16 +28,27 @@ if ($result) {
             $song_status = 1;
         }
 
-        $last_playlist = $result_fetch['last_playlist'];
+        $last_playlist_id = $result_fetch['last_playlist'];
 
-        if ($last_playlist == null) {
+        if ($last_playlist_id == null) {
 
             $last_playlist_name = "No Playlist Played Yet";
             $playlist_status = 0;
         } else {
 
-            $last_playlist_name = $last_playlist;
-            $playlist_status = 1;
+            $playlist_query = "SELECT * FROM `$_SESSION[email]` WHERE `id`='$last_playlist_id'";
+            $playlist_result = mysqli_query($con, $playlist_query);
+
+            if ($playlist_result) {
+
+                $playlist_fetch = mysqli_fetch_assoc($playlist_result);
+
+                $last_playlist_name = $playlist_fetch['playlist_name'];
+                $playlist_status = 1;
+            } else {
+                $last_playlist_name = "No Playlist Played Yet";
+                $playlist_status = 0;
+            }
         }
     } else {
         echo "
@@ -177,7 +188,7 @@ if ($result) {
                         <?php if ($playlist_status == 0) { ?>
                             <button disabled><?php echo $last_playlist_name; ?></button>
                         <?php } else { ?>
-                            <button onclick="<?php $_SESSION['current_playlist'] = $last_playlist; ?> location.href = '../playlist_pages/playlist_page.php'"><?php echo $last_playlist_name; ?></button>
+                            <button onclick="<?php $_SESSION['current_playlist'] = $last_playlist_name; ?> location.href = '../playlist_pages/playlist_page.php'"><?php echo $last_playlist_name; ?></button>
                         <?php } ?>
                     </div>
                 </td>

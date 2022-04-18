@@ -15,6 +15,9 @@ body {
   background-color: black;
   color: white;
   padding: 20px 0;
+  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 header h1 {

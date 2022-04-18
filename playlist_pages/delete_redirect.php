@@ -5,7 +5,7 @@
     $toDeleteID = $_POST['delete'];
 
     # for debugging
-    echo "$playlist <br> ID: $toDeleteID <br>";
+    # echo "$playlist <br> ID: $toDeleteID <br>";
 
     $query = "DELETE FROM `song_$email` WHERE `id` = '$toDeleteID'";
     mysqli_query($con, $query);

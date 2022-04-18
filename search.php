@@ -1,24 +1,23 @@
 <!-- styling for php document -->
 <style>
-    .resultsPhp
-    {
-        background-color: pink;
+    .resultsPhp {
         font-size: 30px;
         display: flex;
     }
-    .brand2
-    {
+
+    .brand2 {
         font-size: 20px;
     }
 </style>
 
 <?php
-  require ('db_connection.php');
-  session_start();
+require('db_connection.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="search.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +37,7 @@
             <button class="header_btns" onClick="logout()">
                 <img src="images/logout.png">
             </button>
-            
+
             <div class="main_header">
                 <h1>Goatify</h1>
             </div>
@@ -57,7 +56,7 @@
         <form action="search.php" method="post" id="search">
             <div class="options_section">
                 <div class="options">
-                    <label for="genre">Genre:</label>
+                    <label for="genre" class="filterText">Genre:</label>
                     <br>
                     <select name="genre" id="genre">
                         <option value="None" selected>None</option>
@@ -67,21 +66,28 @@
                         <option value="K-Pop">K-Pop</option>
                         <option value="R&B">R&B</option>
                         <option value="Rock">Rock</option>
+                        <option value="Electronic">Electronic</option>
+                        <option value="Instrumental">Instrumental</option>
+                        <option value="Classical">Classical</option>
+                        <option value="New York">New York</option>
+                        <option value="Waltz">Waltz</option>
+                        <option value="Vocal">Vocal</option>
+                        <option value="Parallel Anthology">Parallel Anthology</option>
+                        <option value="EDM">EDM</option>
                     </select>
                 </div>
 
                 <div class="options">
-                    <label for="year">Year:</label>
+                    <label for="year" class="filterText">Year:</label>
                     <br>
                     <select name="year" id="year">
                         <option value="None" selected>None</option>
 
                         <script>
                             var select = document.getElementById('year');
-                            for (var i = startYear; i <= currentYear; i++) 
-                            {
+                            for (var i = startYear; i <= currentYear; i++) {
                                 select.options[select.options.length] = new Option(i, i);
-                            } 
+                            }
                         </script>
 
                         <!-- <option value="2010">2010</option>
@@ -107,219 +113,229 @@
         </form>
     </section>
 
-    <section class="results_wrap" id="sections">
-        <table id="titles">
-            <thead>
-                <tr class="brand">
-                    <td id="name">Name</td>
-                    <td id="artist">Artist</td>
-                    <td id="album">Album</td>
-                    <td id="genre">Genre</td>
-                    <td id="year">Year</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if(isset($_REQUEST['search_input']))
-                {
-                    $search = $_REQUEST['search_input'];
-                    if(strlen(trim($search))<=0)
-                    {
-                        echo "<p class=\"resultsPHP\">";
-                        echo "Enter Info";
-                        echo "</p>";
-                    }
-                    $sql = "SELECT * from music_information
-                            WHERE song_name LIKE '".$search."%' 
-                            OR  artist_name LIKE '".$search."%' 
-                            OR  album_name LIKE '".$search."%' 
-                            OR  genre LIKE '".$search."%' 
-                            OR  release_year LIKE '".$search."%'";
-                                    
-                                // goes to the data base with our quere and retreives the desired info
-                            $results = mysqli_query($con, $sql);
-                            // checks if the return if was greater then 0
-                            if(mysqli_num_rows($results)>0)
-                            {
-                                // makes row array hold each field of the info stored in the data base
-                                while($searchRow = mysqli_fetch_array($results))
-                                {
-                                    $song = $searchRow[1];
-                                    $artist = $searchRow[2];
-                                    $album = $searchRow[3];
-                                    $genre = $searchRow[4];
-                                    $year = $searchRow[5];
-                                    ?>
-                                    <tr class="brand">
-                                        <td><?php echo $song ?></td>
-                                        <td><?php echo $artist ?></td>
-                                        <td><?php echo $album ?></td>
-                                        <td><?php echo $genre ?></td>
-                                        <td><?php echo $year ?></td>
-                                        <td>
-                                            <div class="dropdown" id = options>
-                                                <button class="dropbtn">...</button>
-                                                <div class="dropdown-content">
-                                                    <form method="POST" action="song_pages/song_redirect.php">
-                                                        <button type="submit" name="song_info" value="<?php echo $song ?>">Information</button>
+
+    <?php
+    if (isset($_REQUEST['search_input'])) {
+        $search = $_REQUEST['search_input'];
+        if (strlen(trim($search)) <= 0) {
+            echo "<p class=\"resultsPHP\">";
+            echo "Enter Info";
+            echo "</p>";
+        } else {
+
+            $sql = "SELECT * from music_information
+                    WHERE song_name LIKE '" . $search . "%' 
+                    OR  artist_name LIKE '" . $search . "%' 
+                    OR  album_name LIKE '" . $search . "%' 
+                    OR  genre LIKE '" . $search . "%' 
+                    OR  release_year LIKE '" . $search . "%'";
+
+            // goes to the data base with our quere and retreives the desired info
+            $results = mysqli_query($con, $sql);
+            // checks if the return if was greater then 0
+            if (mysqli_num_rows($results) > 0) {
+    ?>
+                <section class="results_wrap" id="sections">
+                    <table id="titles">
+                        <thead>
+                            <tr class="brand">
+                                <td class="song">Name</td>
+                                <td class="artist">Artist</td>
+                                <td class="album">Album</td>
+                                <td class="genre">Genre</td>
+                                <td class="year">Year</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <?php
+                            // makes row array hold each field of the info stored in the data base
+                            while ($searchRow = mysqli_fetch_array($results)) {
+                                $song = $searchRow[1];
+                                $artist = $searchRow[2];
+                                $album = $searchRow[3];
+                                $genre = $searchRow[4];
+                                $year = $searchRow[5];
+                            ?>
+                                <tr class="brand">
+                                    <td class="song"><?php echo $song ?></td>
+                                    <td class="artist"><?php echo $artist ?></td>
+                                    <td class="album"><?php echo $album ?></td>
+                                    <td class="genre"><?php echo $genre ?></td>
+                                    <td class="year"><?php echo $year ?></td>
+                                    <td class="links">
+                                        <div class="dropdown" id=options>
+                                            <button class="dropbtn">...</button>
+                                            <div class="dropdown-content">
+                                                <form method="POST" action="song_pages/song_redirect.php">
+                                                    <button type="submit" name="song_info" value="<?php echo $song ?>" class="songdropDown">Information</button>
                                                     <!-- <a href="./song_pages/redirect_song.php" class="brand2">Information</a> -->
-                                                    </form> 
-                                                <form method="POST" action="add_to_play.php">
-                                                    <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
-                                                    <input type="submit" name="submit" value="Add To Playlist ploix"/>
                                                 </form>
-                                                </div>
+                                                <form method="POST" action="add_to_play.php">
+                                                    <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0]; ?>" />
+                                                    <input type="submit" name="submit" value="Add To Playlist" class="songdropDown" />
+                                                </form>
                                             </div>
-                                        </td>
-                                    </tr>
-                                    <br>
-                                    <?php
-                                }
-                            }
-                                // if the user types some letters that arent in the database
-                            else
-                            {
-                                ?>
-                                <tr>
-                                <td>No Results</td>
+                                        </div>
+                                    </td>
                                 </tr>
-                                <?php
-                            }       
+                                <br>
+                            <?php
+                            }
+                        }
+                        // if the user types some letters that arent in the database
+                        else {
+                            ?>
+                            <tr>
+                                <td>No Results</td>
+                            </tr>
+                <?php
+                        }
+                    }
                 }
-                
-                    //include('C:\xampp\htdocs\Music_Player\logged_in\home.php');
-                if(isset($_POST['search']) and isset($_POST['genre']) and isset($_POST['year']))
-                {
+                ?>
+                <?php
+
+                //include('C:\xampp\htdocs\Music_Player\logged_in\home.php');
+                if (isset($_POST['search']) and isset($_POST['genre']) and isset($_POST['year'])) {
                     $search = $_POST["search"];
                     $genreSelect = $_POST['genre'];
                     $yearSelect = $_POST['year'];
                     // export info based on these results maybe do some if statements, its going to get really long
                     // actually
 
-                    if(strlen(trim($search))<=0)
-                    {
+
+                    if (strlen(trim($search)) <= 0) {
                         echo "<p class=\"resultsPHP\">";
                         echo "Enter Info";
                         echo "</p>";
-                    }
-                    else
-                    {
+                    } else {
                         // querue to select stuff inputted by the search
                         // putting % right after the " next to search will bring up everything starting with that letter
                         // make sure to also use LIKE
 
+                ?>
+
+                        <?php
+
                         // if both are none
-                        if($genreSelect == "None" and $yearSelect == "None")
-                        {
+                        if ($genreSelect == "None" and $yearSelect == "None") {
                             $sql = "SELECT * from music_information
-                            WHERE song_name LIKE '".$search."%' 
-                            OR  artist_name LIKE '".$search."%' 
-                            OR  album_name LIKE '".$search."%' 
-                            OR  genre LIKE '".$search."%' 
-                            OR  release_year LIKE '".$search."%'";
+                            WHERE song_name LIKE '" . $search . "%' 
+                            OR  artist_name LIKE '" . $search . "%' 
+                            OR  album_name LIKE '" . $search . "%' 
+                            OR  genre LIKE '" . $search . "%' 
+                            OR  release_year LIKE '" . $search . "%'";
                         }
                         // if genre selected and year not
-                        else if($yearSelect == "None")
-                        {
+                        else if ($yearSelect == "None") {
                             $sql = "SELECT * from music_information
-                            WHERE genre = '".$genreSelect."'
-                            AND (song_name LIKE '".$search."%' 
-                            OR  artist_name LIKE '".$search."%' 
-                            OR  album_name LIKE '".$search."%' 
-                            OR  release_year LIKE '".$search."%')";
+                            WHERE genre = '" . $genreSelect . "'
+                            AND (song_name LIKE '" . $search . "%' 
+                            OR  artist_name LIKE '" . $search . "%' 
+                            OR  album_name LIKE '" . $search . "%' 
+                            OR  release_year LIKE '" . $search . "%')";
                         }
                         // if genre not and year selected
-                        else if($genreSelect == "None")
-                        {
+                        else if ($genreSelect == "None") {
                             $sql = "SELECT * from music_information
-                            WHERE release_year = '".$yearSelect."'
-                            AND (song_name LIKE '".$search."%' 
-                            OR  artist_name LIKE '".$search."%' 
-                            OR  album_name LIKE '".$search."%' 
-                            OR  genre LIKE '".$search."%')";
+                            WHERE release_year = '" . $yearSelect . "'
+                            AND (song_name LIKE '" . $search . "%' 
+                            OR  artist_name LIKE '" . $search . "%' 
+                            OR  album_name LIKE '" . $search . "%' 
+                            OR  genre LIKE '" . $search . "%')";
                         }
                         // if genre selected and year selected
-                        else
-                        {
+                        else {
                             $sql = "SELECT * from music_information
-                            WHERE release_year = '".$yearSelect."'
-                            AND genre = '".$genreSelect."'
-                            AND (song_name LIKE '".$search."%' 
-                            OR  artist_name LIKE '".$search."%' 
-                            OR  album_name LIKE '".$search."%' 
-                            OR  genre LIKE '".$search."%')";
+                            WHERE release_year = '" . $yearSelect . "'
+                            AND genre = '" . $genreSelect . "'
+                            AND (song_name LIKE '" . $search . "%' 
+                            OR  artist_name LIKE '" . $search . "%' 
+                            OR  album_name LIKE '" . $search . "%' 
+                            OR  genre LIKE '" . $search . "%')";
                         }
 
                         // goes to the data base with our quere and retreives the desired info
                         $results = mysqli_query($con, $sql);
                         // checks if the return if was greater then 0
-                        if(mysqli_num_rows($results)>0)
-                        {
-                            // makes row array hold each field of the info stored in the data base
-                            while($searchRow = mysqli_fetch_array($results))
-                            {
-                                $song = $searchRow[1];
-                                $artist = $searchRow[2];
-                                $album = $searchRow[3];
-                                $genre = $searchRow[4];
-                                $year = $searchRow[5];
+                        if (mysqli_num_rows($results) > 0) {
+                        ?>
+                            <section class="results_wrap" id="sections">
+                                <table id="titles">
+                                    <thead>
+                                        <tr class="brand">
+                                            <td class="song">Name</td>
+                                            <td class="artist">Artist</td>
+                                            <td class="album">Album</td>
+                                            <td class="genre">Genre</td>
+                                            <td class="year">Year</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // makes row array hold each field of the info stored in the data base
+                                        while ($searchRow = mysqli_fetch_array($results)) {
+                                            $song = $searchRow[1];
+                                            $artist = $searchRow[2];
+                                            $album = $searchRow[3];
+                                            $genre = $searchRow[4];
+                                            $year = $searchRow[5];
 
-                                ?>
-                                <tr class="brand">
-                                    <td><?php echo $song ?></td>
-                                    <td><?php echo $artist ?></td>
-                                    <td><?php echo $album ?></td>
-                                    <td><?php echo $genre ?></td>
-                                    <td><?php echo $year ?></td>
-                                    <td>
-                                        <div class="dropdown" id = options>
-                                            <button class="dropbtn">...</button>
-                                            <div class="dropdown-content">
-                                                <form method="POST" action="song_pages/song_redirect.php">
-                                                        <button type="submit" name="song_info" value="<?php echo $song ?>">Information</button>
-                                                    <!-- <a href="./song_pages/redirect_song.php" class="brand2">Information</a> -->
-                                                </form> 
+                                        ?>
+                                            <tr class="brand">
+                                                <td class="song"><?php echo $song ?></td>
+                                                <td class="artist"><?php echo $artist ?></td>
+                                                <td class="album"><?php echo $album ?></td>
+                                                <td class="genre"><?php echo $genre ?></td>
+                                                <td class="year"><?php echo $year ?></td>
+                                                <td class="links">
+                                                    <div class="dropdown" id=options>
+                                                        <button class="dropbtn">...</button>
+                                                        <div class="dropdown-content">
+                                                            <form method="POST" action="song_pages/song_redirect.php">
+                                                                <button type="submit" name="song_info" value="<?php echo $song ?>" class="songdropDown">Information</button>
+                                                                <!-- <a href="./song_pages/redirect_song.php" class="brand2">Information</a> -->
+                                                            </form>
 
-                                                <form method="POST" action="add_to_play.php">
-                                                    <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0];?>"/>
-                                                    <input type="submit" name="submit" value="Add To Playlist ploix"/>
-                                                </form>
-                                            </div>
-                                                </div>
-                                    </td>
-                                </tr>
-                                <br>
-                                <?php
-                            }
-                            
-                        }
-                        // if the user types some letters that arent in the database
-                        else
-                        {
-                            ?>
-                            <tr>
-                                <td>No Results</td>
-                            </tr>
+                                                            <form method="POST" action="add_to_play.php">
+                                                                <input type="hidden" name="songToAdd" value="<?php echo $searchRow[0]; ?>" />
+                                                                <input type="submit" name="submit" value="Add To Playlist" class="songdropDown" />
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <br>
+                                        <?php
+                                        }
+                                    }
+                                    // if the user types some letters that arent in the database
+                                    else {
+                                        ?>
+                                        <tr>
+                                            <td>No Results</td>
+                                        </tr>
                             <?php
-                        }
-                    }
-                }
-                ?>
+                                    }
+                                }
+                            }
+                            ?>
 
-            </tbody>
-        </table>
-    </section>
+                                    </tbody>
+                                </table>
+                            </section>
 
-    <!-- java script to redirect to home page and logout page -->
-    <script>
-        function logout()
-        {
-            window.location.href="logout.php"
-        }
-        function home()
-        {
-            window.location.href="./logged_in/home.php"
-        }
-    </script>
+                            <!-- java script to redirect to home page and logout page -->
+                            <script>
+                                function logout() {
+                                    window.location.href = "logout.php"
+                                }
+
+                                function home() {
+                                    window.location.href = "./logged_in/home.php"
+                                }
+                            </script>
 </body>
+
 </html>

@@ -25,37 +25,34 @@ and logout buttons*/
   padding-top: 15px;
   font-size: 60px;
 }
+
 /*This describes the text for title*/
 .brand {
   font-family: "Roboto Condensed", sans-serif;
 }
 
 
-#text
-{
+#text {
   height: 100%;
   margin-top: 140px;
   font-size: 70px;
 }
 
 /* both of theses css sections regulate the tables placement*/
-#titles
-{
+#titles {
   padding-top: 50px;
-  background-color: orange;
+  background-color: black;
   color: white;
   width: 45cm;
   font-size: 30px;
   text-align: center;
 }
 
-#list
-{
+#list {
   height: 100px;
 }
 
-#playlistBtn
-{
+#playlistBtn {
   font-size: 50px;
   width: 650px;
   height: 70px;

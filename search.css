@@ -19,7 +19,7 @@ body {
   border: none;
 }
 
-.header_btns img{
+.header_btns img {
   max-width: 100px;
   width: 70%;
 }
@@ -31,7 +31,7 @@ body {
   text-align: center;
 }
 
-header div{
+header div {
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
@@ -46,12 +46,10 @@ header div{
   padding: 0;
 }
 
-#search
-{
+#search {
   width: 100%;
   display: inline-flex;
   justify-content: space-around;
-  background: antiquewhite;
   padding: 25px 0;
 }
 
@@ -73,106 +71,167 @@ header div{
   padding: 0;
 }
 
-#sections
-{
+#sections {
+  padding-left: 10%;
+  width: 100%;
   color: white;
+
 }
 
-#titles
-{
+#titles {
   /* padding-top: 50px; */
   /* bottom: 0px; */
-  background-color: orange;
   color: white;
   /* width: 45cm; */
   font-size: 30px;
   width: 100%;
 }
 
+#genre {
+  float: left;
+  width: 130px;
+  height: 25px;
+}
+
+#year {
+  float: left;
+  width: 130px;
+  height: 25px;
+
+}
+
 /* these 2 sections gives the spaceing for each of the columns in the table */
-#name
-{
+#name {
   width: 600px;
 }
-#artist
-{
+
+#artist {
   width: 300px;
 }
 
 /*This describes all the input boxes*/
 .inputSect {
-    font-size: 25px;
-    max-width: 20cm;
-    width: 100%;
-    min-width: 3cm;
-    height: 35px;
-    border-radius: 100px;
-    /* Let the input text start some px's ahead */
-    padding-left: 10px;
-    background-color: #c4c4c4;
+  font-size: 25px;
+  max-width: 20cm;
+  width: 100%;
+  min-width: 3cm;
+  height: 50px;
+  border-radius: 100px;
+  /* Let the input text start some px's ahead */
+  padding-left: 10px;
+  background-color: #c4c4c4;
 }
 
 #searchButton {
-    height: 50px;
-    width: 50px;
-    padding-left: 25px;
+  height: 50px;
+  width: 50px;
+  padding-left: 25px;
 }
 
 /* describes entire container holding the search results */
-#results
-{
-    top: 180px;
-    background: aquamarine;
-    width: 35cm;
-    height: 100%;
+#results {
+  top: 180px;
+  width: 35cm;
+  height: 100%;
+}
+
+.filterText {
+  font-size: 30px;
+  color: white;
+}
+
+.song {
+  padding-left: 2%;
+  text-align: center;
+  width: 22%;
+  height: 25px;
+}
+
+.artist {
+  text-align: center;
+  width: 15%;
+  height: 25px;
+}
+
+.album {
+  text-align: center;
+  width: 16%;
+  height: 25px;
+}
+
+.genre {
+  text-align: center;
+  width: 10%;
+  height: 25px;
+}
+
+.year {
+
+  width: 10%;
+  height: 25px;
+  text-align: center;
+
+}
+
+.links {
+  float: left;
+  width: 3%;
+}
+
+.songdropDown {
+  width: 100%;
+  height: 40px;
 }
 
 /*Drop down section-------------------------------------------*/
 
 /* Style The Dropdown Button */
 .dropbtn {
-    background-color: antiquewhite;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    /* float: left; */
-    padding-left: 20px;
-    padding-right: 30px;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: gold;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #f1f1f1}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: gold;
+  background-color: black;
+  color: gold;
+  font-size: 65px;
+  border: none;
+  cursor: pointer;
+  padding-bottom: 33px;
+
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  /* float: left; */
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: black;
 }

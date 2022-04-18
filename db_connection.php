@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost", "root", "btsarmy1118", "Music_Player_DB");
+$con = mysqli_connect("162.241.253.33", "brandsg3_Alfred", "btsarmy1118", "brandsg3_music_player_db");
 
 if (mysqli_connect_error()) {
 

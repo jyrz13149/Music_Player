@@ -111,12 +111,13 @@
     <div class="grid-container">
         <div class="card-list">
         <?php
-            $sql = "SELECT album_name,release_year FROM `music_information` WHERE `artist_name` = '$artist_name' GROUP BY album_name";
+            $sql = "SELECT album_name,release_year FROM `music_information` WHERE `artist_name` = '$artist_name' AND NOT 'album_name' = '' GROUP BY album_name";
             $results = mysqli_query($con, $sql);
             while($searchRow = mysqli_fetch_array($results))
             {
                 $album_name = $searchRow[0];
                 $release_year = $searchRow[1];
+                if (strcmp($album_name, '') == 0) continue;
                 ?>
                 <div>
                     <div class="card">

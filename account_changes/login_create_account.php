@@ -35,7 +35,7 @@ function sendEmail($veri_code, $email)
         $mail->Subject = 'Email Verification: GOATIFY';
         $mail->Body    = "Thank You for creating a GOATIFY Music Player account! 
                             Please verify your email address through the link below. 
-                            <a href = 'http://localhost/Music_Player/account_changes/email_verification.php?email=$email&veri_code=$veri_code'>Verify Email</a>
+                            <a href = 'https://brandonspangler.com/goatify/account_changes/email_verification.php?email=$email&veri_code=$veri_code'>Verify Email</a>
                             ";
 
         $mail->send();
